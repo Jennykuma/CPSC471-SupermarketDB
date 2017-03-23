@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #A9C5A0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+#homepagetitle{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 900px;
+    top: 25px;
+
+    /* Styling */
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: 300;
+    font-size: 68px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.phpStuff{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 1200px;
+    top: 100px;
+
+    /* Styling */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+}
