@@ -1,7 +1,16 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
+<<<<<<< HEAD
 # Date: 2017-03-29 15:30:28
+=======
+<<<<<<< HEAD
+# Date: 2017-03-29 15:23:48
+# Generator: MySQL-Front 6.0  (Build 1.98)
+=======
+# Date: 2017-03-29 15:24:52
+>>>>>>> origin/master
 # Generator: MySQL-Front 6.0  (Build 1.99)
 
+>>>>>>> origin/master
 
 #
 # Structure for table "department"
@@ -58,6 +67,25 @@ CREATE TABLE `names` (
 #
 
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
+
+#
+# Structure for table "shift"
+#
+
+DROP TABLE IF EXISTS `shift`;
+CREATE TABLE `shift` (
+  `shift_num` int(8) NOT NULL,
+  `date` date DEFAULT NULL,
+  `start_time` time DEFAULT NULL,
+  `end_time` time DEFAULT NULL,
+  `emp_id` int(11) DEFAULT NULL,
+  `dep_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`shift_num`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "shift"
+#
 
 #
 # Structure for table "product"
