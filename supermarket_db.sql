@@ -1,6 +1,7 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 15:14:38
-# Generator: MySQL-Front 6.0  (Build 1.98)
+# Date: 2017-03-29 15:24:52
+# Generator: MySQL-Front 6.0  (Build 1.99)
+
 
 #
 # Structure for table "department"
@@ -57,6 +58,25 @@ CREATE TABLE `names` (
 #
 
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
+
+#
+# Structure for table "product"
+#
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `pid` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `sup_name` varchar(255) DEFAULT NULL,
+  `wholesale_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
 
 #
 # Structure for table "transaction"
