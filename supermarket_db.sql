@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 16:30:46
+# Date: 2017-03-29 16:51:32
 # Generator: MySQL-Front 6.0  (Build 1.100)
 
 
@@ -19,12 +19,8 @@ CREATE TABLE `customer` (
 # Data for table "customer"
 #
 
+INSERT INTO `customer` VALUES (1,'Tyrone',1234567890);
 
-=======
-# Date: 2017-03-29 15:24:52
-# Generator: MySQL-Front 6.0  (Build 1.99)
-
->>>>>>> origin/master
 #
 # Structure for table "department"
 #
@@ -40,23 +36,7 @@ CREATE TABLE `department` (
 # Data for table "department"
 #
 
-
-#
-# Structure for table "dependent"
-#
-
-DROP TABLE IF EXISTS `dependent`;
-CREATE TABLE `dependent` (
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `emp_id` int(8) NOT NULL,
-  `relation` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`name`,`emp_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "dependent"
-#
-
+INSERT INTO `department` VALUES ('Produce',2);
 
 #
 # Structure for table "employee"
@@ -92,15 +72,17 @@ CREATE TABLE `gives_feedback` (
   `rating` int(10) DEFAULT NULL,
   `feedback` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`cust_id`,`dep_name`),
-  KEY `dep_name` (`dep_name`),
-  CONSTRAINT `cust_id` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
-  CONSTRAINT `dep_name` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
+  KEY `cust_id_fk` (`cust_id`),
+  KEY `dep_name_fk` (`dep_name`),
+  CONSTRAINT `cust_id_fk` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
+  CONSTRAINT `dep_name_fk` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
 # Data for table "gives_feedback"
 #
 
+INSERT INTO `gives_feedback` VALUES (1,'Produce',9,'Groceries ;)');
 
 #
 # Structure for table "names"
@@ -155,23 +137,6 @@ CREATE TABLE `shift` (
 
 #
 # Data for table "shift"
-#
-
-
-#
-# Structure for table "supplier"
-#
-
-DROP TABLE IF EXISTS `supplier`;
-CREATE TABLE `supplier` (
-  `name` varchar(11) DEFAULT NULL,
-  `phone_num` varchar(12) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "supplier"
 #
 
 
