@@ -1,6 +1,22 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 14:58:37
-# Generator: MySQL-Front 6.0  (Build 1.78)
+# Date: 2017-03-29 15:08:10
+# Generator: MySQL-Front 6.0  (Build 1.98)
+
+
+#
+# Structure for table "department"
+#
+
+DROP TABLE IF EXISTS `department`;
+CREATE TABLE `department` (
+  `dname` varchar(255) DEFAULT NULL,
+  `dnumber` int(11) DEFAULT NULL,
+  UNIQUE KEY `dname` (`dname`)
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+
+#
+# Data for table "department"
+#
 
 
 #
