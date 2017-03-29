@@ -1,0 +1,44 @@
+﻿# Host: localhost  (Version 5.7.17-log)
+# Date: 2017-03-29 14:58:37
+# Generator: MySQL-Front 6.0  (Build 1.78)
+
+
+#
+# Structure for table "employee"
+#
+
+DROP TABLE IF EXISTS `employee`;
+CREATE TABLE `employee` (
+  `eid` int(8) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(255) DEFAULT NULL,
+  `lname` varchar(255) DEFAULT NULL,
+  `sin` decimal(9,0) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `salary` decimal(5,0) DEFAULT NULL,
+  `phone_num` varchar(12) DEFAULT NULL,
+  `dep_name` varchar(255) DEFAULT NULL,
+  `super_id` int(8) DEFAULT NULL,
+  PRIMARY KEY (`eid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "employee"
+#
+
+
+#
+# Structure for table "names"
+#
+
+DROP TABLE IF EXISTS `names`;
+CREATE TABLE `names` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `names` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+#
+# Data for table "names"
+#
+
+INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
