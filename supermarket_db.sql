@@ -1,6 +1,7 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 15:24:52
-# Generator: MySQL-Front 6.0  (Build 1.99)
+# Date: 2017-03-29 16:45:42
+# Generator: MySQL-Front 6.0  (Build 1.100)
+
 
 #
 # Structure for table "department"
@@ -17,6 +18,7 @@ CREATE TABLE `department` (
 # Data for table "department"
 #
 
+INSERT INTO `department` VALUES ('Bakery',1);
 
 #
 # Structure for table "dependent"
@@ -59,6 +61,22 @@ CREATE TABLE `employee` (
 
 
 #
+# Structure for table "makes"
+#
+
+DROP TABLE IF EXISTS `makes`;
+CREATE TABLE `makes` (
+  `cust_id` int(8) NOT NULL AUTO_INCREMENT,
+  `trans_id` int(8) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "makes"
+#
+
+
+#
 # Structure for table "names"
 #
 
@@ -74,6 +92,47 @@ CREATE TABLE `names` (
 #
 
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
+
+#
+# Structure for table "product"
+#
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `pid` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `sup_name` varchar(255) DEFAULT NULL,
+  `wholesale_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
+INSERT INTO `product` VALUES (1,'Bread',NULL,NULL,NULL);
+
+#
+# Structure for table "sells"
+#
+
+DROP TABLE IF EXISTS `sells`;
+CREATE TABLE `sells` (
+  `dep_name` varchar(11) NOT NULL DEFAULT '',
+  `prod_id` int(8) NOT NULL,
+  PRIMARY KEY (`dep_name`,`prod_id`),
+  KEY `dep_name_fk` (`dep_name`),
+  KEY `prod_id_fk` (`prod_id`),
+  CONSTRAINT `dep_name_fk` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
+  CONSTRAINT `prod_id_fk` FOREIGN KEY (`prod_id`) REFERENCES `product` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "sells"
+#
+
+INSERT INTO `sells` VALUES ('Bakery',1);
 
 #
 # Structure for table "shift"
@@ -92,24 +151,6 @@ CREATE TABLE `shift` (
 
 #
 # Data for table "shift"
-#
-
-#
-# Structure for table "product"
-#
-
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE `product` (
-  `pid` int(8) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `price` decimal(5,2) DEFAULT NULL,
-  `sup_name` varchar(255) DEFAULT NULL,
-  `wholesale_price` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "product"
 #
 
 
