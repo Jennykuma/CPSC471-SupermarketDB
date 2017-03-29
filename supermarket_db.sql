@@ -1,16 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-<<<<<<< HEAD
-# Date: 2017-03-29 15:30:28
-=======
-<<<<<<< HEAD
-# Date: 2017-03-29 15:23:48
-# Generator: MySQL-Front 6.0  (Build 1.98)
-=======
 # Date: 2017-03-29 15:24:52
->>>>>>> origin/master
 # Generator: MySQL-Front 6.0  (Build 1.99)
-
->>>>>>> origin/master
 
 #
 # Structure for table "department"
@@ -25,6 +15,23 @@ CREATE TABLE `department` (
 
 #
 # Data for table "department"
+#
+
+
+#
+# Structure for table "dependent"
+#
+
+DROP TABLE IF EXISTS `dependent`;
+CREATE TABLE `dependent` (
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `emp_id` int(8) NOT NULL,
+  `relation` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`name`,`emp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "dependent"
 #
 
 
