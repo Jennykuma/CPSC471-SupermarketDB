@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 15:08:10
-# Generator: MySQL-Front 6.0  (Build 1.98)
+# Date: 2017-03-29 15:18:41
+# Generator: MySQL-Front 6.0  (Build 1.78)
 
 
 #
@@ -58,3 +58,21 @@ CREATE TABLE `names` (
 #
 
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
+
+#
+# Structure for table "transaction"
+#
+
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE `transaction` (
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `time` datetime DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `payment_method` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "transaction"
+#
+
