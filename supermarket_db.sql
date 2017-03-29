@@ -2,7 +2,6 @@
 # Date: 2017-03-29 15:23:48
 # Generator: MySQL-Front 6.0  (Build 1.98)
 
-
 #
 # Structure for table "department"
 #
@@ -76,5 +75,21 @@ CREATE TABLE `shift` (
 
 #
 # Data for table "shift"
+#
+
+# Structure for table "transaction"
+#
+
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE `transaction` (
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `time` datetime DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `payment_method` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "transaction"
 #
 
