@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 15:24:52
+# Date: 2017-03-29 15:30:28
 # Generator: MySQL-Front 6.0  (Build 1.99)
 
 
@@ -75,6 +75,23 @@ CREATE TABLE `product` (
 
 #
 # Data for table "product"
+#
+
+
+#
+# Structure for table "supplier"
+#
+
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE `supplier` (
+  `name` varchar(11) DEFAULT NULL,
+  `phone_num` varchar(12) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "supplier"
 #
 
 
