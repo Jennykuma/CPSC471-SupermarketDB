@@ -1,8 +1,31 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 16:45:42
+# Date: 2017-03-29 16:30:46
 # Generator: MySQL-Front 6.0  (Build 1.100)
 
 
+#
+# Structure for table "customer"
+#
+
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `cid` int(8) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phone_num` int(10) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "customer"
+#
+
+
+=======
+# Date: 2017-03-29 15:24:52
+# Generator: MySQL-Front 6.0  (Build 1.99)
+>>>>>>> origin/master
+
+>>>>>>> origin/master
 #
 # Structure for table "department"
 #
@@ -61,6 +84,7 @@ CREATE TABLE `employee` (
 
 
 #
+<<<<<<< HEAD
 # Structure for table "makes"
 #
 
@@ -73,6 +97,25 @@ CREATE TABLE `makes` (
 
 #
 # Data for table "makes"
+=======
+# Structure for table "gives_feedback"
+#
+
+DROP TABLE IF EXISTS `gives_feedback`;
+CREATE TABLE `gives_feedback` (
+  `cust_id` int(8) NOT NULL,
+  `dep_name` varchar(255) NOT NULL,
+  `rating` int(10) DEFAULT NULL,
+  `feedback` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`,`dep_name`),
+  KEY `dep_name` (`dep_name`),
+  CONSTRAINT `cust_id` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
+  CONSTRAINT `dep_name` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "gives_feedback"
+>>>>>>> origin/master
 #
 
 
@@ -105,6 +148,7 @@ CREATE TABLE `product` (
   `sup_name` varchar(255) DEFAULT NULL,
   `wholesale_price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`pid`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 #
@@ -133,6 +177,14 @@ CREATE TABLE `sells` (
 #
 
 INSERT INTO `sells` VALUES ('Bakery',1);
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
+>>>>>>> origin/master
 
 #
 # Structure for table "shift"
