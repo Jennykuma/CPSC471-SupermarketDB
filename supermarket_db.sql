@@ -20,6 +20,11 @@ CREATE TABLE `customer` (
 #
 
 
+=======
+# Date: 2017-03-29 15:24:52
+# Generator: MySQL-Front 6.0  (Build 1.99)
+
+>>>>>>> origin/master
 #
 # Structure for table "department"
 #
@@ -33,6 +38,23 @@ CREATE TABLE `department` (
 
 #
 # Data for table "department"
+#
+
+
+#
+# Structure for table "dependent"
+#
+
+DROP TABLE IF EXISTS `dependent`;
+CREATE TABLE `dependent` (
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `emp_id` int(8) NOT NULL,
+  `relation` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`name`,`emp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "dependent"
 #
 
 
@@ -133,6 +155,23 @@ CREATE TABLE `shift` (
 
 #
 # Data for table "shift"
+#
+
+
+#
+# Structure for table "supplier"
+#
+
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE `supplier` (
+  `name` varchar(11) DEFAULT NULL,
+  `phone_num` varchar(12) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "supplier"
 #
 
 
