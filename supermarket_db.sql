@@ -21,6 +21,15 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` VALUES (1,'Tyrone',1234567890);
 
+<<<<<<< HEAD
+=======
+=======
+# Date: 2017-03-29 15:24:52
+# Generator: MySQL-Front 6.0  (Build 1.99)
+>>>>>>> origin/master
+
+>>>>>>> origin/master
+>>>>>>> origin/master
 #
 # Structure for table "department"
 #
@@ -36,7 +45,28 @@ CREATE TABLE `department` (
 # Data for table "department"
 #
 
+<<<<<<< HEAD
 INSERT INTO `department` VALUES ('Produce',2);
+=======
+INSERT INTO `department` VALUES ('Bakery',1);
+
+#
+# Structure for table "dependent"
+#
+
+DROP TABLE IF EXISTS `dependent`;
+CREATE TABLE `dependent` (
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `emp_id` int(8) NOT NULL,
+  `relation` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`name`,`emp_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "dependent"
+#
+
+>>>>>>> origin/master
 
 #
 # Structure for table "employee"
@@ -62,6 +92,20 @@ CREATE TABLE `employee` (
 
 
 #
+<<<<<<< HEAD
+# Structure for table "makes"
+#
+
+DROP TABLE IF EXISTS `makes`;
+CREATE TABLE `makes` (
+  `cust_id` int(8) NOT NULL AUTO_INCREMENT,
+  `trans_id` int(8) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "makes"
+=======
 # Structure for table "gives_feedback"
 #
 
@@ -80,6 +124,7 @@ CREATE TABLE `gives_feedback` (
 
 #
 # Data for table "gives_feedback"
+>>>>>>> origin/master
 #
 
 INSERT INTO `gives_feedback` VALUES (1,'Produce',9,'Groceries ;)');
@@ -113,12 +158,43 @@ CREATE TABLE `product` (
   `sup_name` varchar(255) DEFAULT NULL,
   `wholesale_price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`pid`)
+<<<<<<< HEAD
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
+INSERT INTO `product` VALUES (1,'Bread',NULL,NULL,NULL);
+
+#
+# Structure for table "sells"
+#
+
+DROP TABLE IF EXISTS `sells`;
+CREATE TABLE `sells` (
+  `dep_name` varchar(11) NOT NULL DEFAULT '',
+  `prod_id` int(8) NOT NULL,
+  PRIMARY KEY (`dep_name`,`prod_id`),
+  KEY `dep_name_fk` (`dep_name`),
+  KEY `prod_id_fk` (`prod_id`),
+  CONSTRAINT `dep_name_fk` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
+  CONSTRAINT `prod_id_fk` FOREIGN KEY (`prod_id`) REFERENCES `product` (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "sells"
+#
+
+INSERT INTO `sells` VALUES ('Bakery',1);
+=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
 # Data for table "product"
 #
 
+>>>>>>> origin/master
 
 #
 # Structure for table "shift"
