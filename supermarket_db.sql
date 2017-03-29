@@ -1,6 +1,12 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
+<<<<<<< HEAD
 # Date: 2017-03-29 15:23:48
 # Generator: MySQL-Front 6.0  (Build 1.98)
+=======
+# Date: 2017-03-29 15:24:52
+# Generator: MySQL-Front 6.0  (Build 1.99)
+
+>>>>>>> origin/master
 
 #
 # Structure for table "department"
@@ -77,6 +83,26 @@ CREATE TABLE `shift` (
 # Data for table "shift"
 #
 
+#
+# Structure for table "product"
+#
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `pid` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `sup_name` varchar(255) DEFAULT NULL,
+  `wholesale_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
+
+#
 # Structure for table "transaction"
 #
 
