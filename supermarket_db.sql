@@ -1,12 +1,24 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-<<<<<<< HEAD
-# Date: 2017-03-29 15:23:48
-# Generator: MySQL-Front 6.0  (Build 1.98)
-=======
-# Date: 2017-03-29 15:24:52
-# Generator: MySQL-Front 6.0  (Build 1.99)
+# Date: 2017-03-29 16:30:46
+# Generator: MySQL-Front 6.0  (Build 1.100)
 
->>>>>>> origin/master
+
+#
+# Structure for table "customer"
+#
+
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `cid` int(8) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `phone_num` int(10) DEFAULT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "customer"
+#
+
 
 #
 # Structure for table "department"
@@ -48,6 +60,27 @@ CREATE TABLE `employee` (
 
 
 #
+# Structure for table "gives_feedback"
+#
+
+DROP TABLE IF EXISTS `gives_feedback`;
+CREATE TABLE `gives_feedback` (
+  `cust_id` int(8) NOT NULL,
+  `dep_name` varchar(255) NOT NULL,
+  `rating` int(10) DEFAULT NULL,
+  `feedback` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`cust_id`,`dep_name`),
+  KEY `dep_name` (`dep_name`),
+  CONSTRAINT `cust_id` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
+  CONSTRAINT `dep_name` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "gives_feedback"
+#
+
+
+#
 # Structure for table "names"
 #
 
@@ -63,6 +96,25 @@ CREATE TABLE `names` (
 #
 
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
+
+#
+# Structure for table "product"
+#
+
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE `product` (
+  `pid` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` decimal(5,2) DEFAULT NULL,
+  `sup_name` varchar(255) DEFAULT NULL,
+  `wholesale_price` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "product"
+#
+
 
 #
 # Structure for table "shift"
@@ -81,24 +133,6 @@ CREATE TABLE `shift` (
 
 #
 # Data for table "shift"
-#
-
-#
-# Structure for table "product"
-#
-
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE `product` (
-  `pid` int(8) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `price` decimal(5,2) DEFAULT NULL,
-  `sup_name` varchar(255) DEFAULT NULL,
-  `wholesale_price` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "product"
 #
 
 
