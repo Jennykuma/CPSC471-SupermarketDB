@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 16:30:46
+# Date: 2017-03-29 16:53:43
 # Generator: MySQL-Front 6.0  (Build 1.100)
 
 
@@ -20,12 +20,6 @@ CREATE TABLE `customer` (
 #
 
 
-=======
-# Date: 2017-03-29 15:24:52
-# Generator: MySQL-Front 6.0  (Build 1.99)
->>>>>>> origin/master
-
->>>>>>> origin/master
 #
 # Structure for table "department"
 #
@@ -84,20 +78,6 @@ CREATE TABLE `employee` (
 
 
 #
-<<<<<<< HEAD
-# Structure for table "makes"
-#
-
-DROP TABLE IF EXISTS `makes`;
-CREATE TABLE `makes` (
-  `cust_id` int(8) NOT NULL AUTO_INCREMENT,
-  `trans_id` int(8) DEFAULT NULL,
-  PRIMARY KEY (`cust_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "makes"
-=======
 # Structure for table "gives_feedback"
 #
 
@@ -115,7 +95,6 @@ CREATE TABLE `gives_feedback` (
 
 #
 # Data for table "gives_feedback"
->>>>>>> origin/master
 #
 
 
@@ -148,7 +127,6 @@ CREATE TABLE `product` (
   `sup_name` varchar(255) DEFAULT NULL,
   `wholesale_price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`pid`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 #
@@ -177,14 +155,6 @@ CREATE TABLE `sells` (
 #
 
 INSERT INTO `sells` VALUES ('Bakery',1);
-=======
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "product"
-#
-
->>>>>>> origin/master
 
 #
 # Structure for table "shift"
@@ -238,5 +208,25 @@ CREATE TABLE `transaction` (
 
 #
 # Data for table "transaction"
+#
+
+
+#
+# Structure for table "makes"
+#
+
+DROP TABLE IF EXISTS `makes`;
+CREATE TABLE `makes` (
+  `cust_id` int(8) NOT NULL AUTO_INCREMENT,
+  `trans_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`cust_id`,`trans_id`),
+  KEY `cust_id_fk` (`cust_id`),
+  KEY `trans_id_fk` (`trans_id`),
+  CONSTRAINT `cust_id_fk` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
+  CONSTRAINT `trans_id_fk` FOREIGN KEY (`trans_id`) REFERENCES `transaction` (`tid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "makes"
 #
 
