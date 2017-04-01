@@ -27,6 +27,19 @@ Supermarket Database
             <div class="row">
                 <h1 class="col-md-12 text-center" id="homepagetitle"> Supermarket Database System </h1>
             </div>
+        </div>
+        
+        <div class="login">
+            <div class ="row">
+                <form action="login_action.php" method="post">
+                    <label><b>Employee ID: </b></label>
+                    <input type="text" placeholder="Enter Employee ID" name="employeeID">
+                    <br>
+                    <label><b>Password: </b></label>
+                    <input type="password" placeholder="Enter password" name="pwd">
+                </form>
+            </div>
+        </div>
 
 
         <div class="phpStuff">
