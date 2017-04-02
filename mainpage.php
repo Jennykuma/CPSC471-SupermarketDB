@@ -30,7 +30,7 @@ Supermarket Database
         </div>
         
         <div class="login">
-            <div class ="row">
+            <div class="row">
                 <form action="login_action.php" method="post">
                     <label><b>Employee ID: </b></label>
                     <input type="text" placeholder="Enter Employee ID" name="employeeID">
@@ -38,6 +38,10 @@ Supermarket Database
                     <label><b>Password: </b></label>
                     <input type="password" placeholder="Enter password" name="pwd">
                 </form>
+            </div>
+
+            <div class="row">
+                <button type="submit" id="loginButton">Log In</button>
             </div>
         </div>
 

@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #A9C5A0;
+    background-color: #87A330;
 }
 
 body {
@@ -10,12 +10,11 @@ body {
     color: white;
 }
 
-#homepagetitle{
+#homepagetitle {
     position: relative;
     text-align: center;
     margin: auto;
     width: 900px;
-    top: 25px;
 
     /* Styling */
     font-family: 'Happy Monkey', sans-serif;
@@ -25,7 +24,44 @@ body {
     letter-spacing: 0.2em;
 }
 
-.phpStuff{
+.login {
+    position: relative;
+    padding-top: 100px;
+    margin: auto;
+    width: 500px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+}
+
+input[type=text], input[type=password], input:focus {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: #87A330;
+}
+
+#loginButton {
+    background-color: #CCC9A1;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#loginButton:hover {
+    opacity: 0.6;
+}
+
+.phpStuff {
     position: relative;
     text-align: center;
     margin: auto;
