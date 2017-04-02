@@ -37,12 +37,15 @@ Supermarket Database
                     <br>
                     <label><b>Password: </b></label>
                     <input type="password" placeholder="Enter password" name="pwd">
+
+                    <div class="row">
+                        <button type="submit" id="loginButton">Log In</button>
+                    </div>
+
                 </form>
             </div>
 
-            <div class="row">
-                <button type="submit" id="loginButton">Log In</button>
-            </div>
+
         </div>
 
         <?php

@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-03-29 17:03:16
-# Generator: MySQL-Front 6.0  (Build 1.100)
+# Date: 2017-04-01 22:34:55
+# Generator: MySQL-Front 6.0  (Build 1.74)
 
 
 #
@@ -76,6 +76,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
+INSERT INTO `employee` VALUES (1,'Jenny','Le',123456789,'Boss',9000,'1234567890','Manager',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Manager',NULL);
 
 #
 # Structure for table "gives_feedback"
