@@ -1,0 +1,79 @@
+* {
+
+    margin: 0;
+    padding-top: 10px;
+    box-sizing: border-box;
+    background-color: #f3f9d0;
+    /*border: 1px solid rgba(100,100,100,0.5);*/
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #b59761;
+}
+
+#welcomemsg {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 900px;
+
+    /* Styling */
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: 300;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.picture{
+    position: absolute;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 600px;
+    height: 50px;
+    padding-top: 50px;
+    padding-left: 650px;
+}
+
+.container {
+    width: 150px;
+    position: absolute;
+    display: block;
+    margin-left: 450px;
+    padding-top: 50px;
+}
+
+#linksHeader {
+    /* Styling */
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#linksList {
+    /* Styling */
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: 200;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+#button1 {
+    background-color: #A1C349;
+    box-shadow: #87A330;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: hand;
+    width: 100px;
+}
+
+#button1:hover{
+    opacity: 0.6;
+}

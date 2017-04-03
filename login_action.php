@@ -47,8 +47,6 @@
         $_SESSION['employee_id'] = $row["fname"];
 
         ?>
-
-        ?>
     </body>
 
 </html>
