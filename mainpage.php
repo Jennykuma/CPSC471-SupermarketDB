@@ -23,30 +23,34 @@ Supermarket Database
         <link href="mainpage.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div class="title">
-            <div class="row">
-                <h1 class="col-md-12 text-center" id="homepagetitle"> Supermarket Database System </h1>
-            </div>
-        </div>
-        
-        <div class="login">
-            <div class="row">
-                <form action="login_action.php" method="post">
-                    <label><b>Employee ID: </b></label>
-                    <input type="text" placeholder="Enter Employee ID" name="employeeID">
-                    <br>
-                    <label><b>Password: </b></label>
-                    <input type="password" placeholder="Enter password" name="pwd">
 
+        <div class="background">
+            <div class="transbox">
+
+                <div class="title">
                     <div class="row">
-                        <button type="submit" id="loginButton">Log In</button>
+                        <h1 class="col-md-12 text-center" id="homepagetitle"> Supermarket Database System </h1>
                     </div>
+                </div>
 
-                </form>
+                <div class="login">
+                    <div class="row">
+                        <form action="login_action.php" method="post">
+                            <label><b>Employee ID: </b></label>
+                            <input type="text" placeholder="Enter Employee ID" name="employeeID">
+                            <br>
+                            <label><b>Password: </b></label>
+                            <input type="password" placeholder="Enter password" name="pwd">
+
+                            <div class="row">
+                                <button type="submit" id="loginButton">Log In</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
-
-
-        </div>
+          </div>
 
         <?php
         ?>

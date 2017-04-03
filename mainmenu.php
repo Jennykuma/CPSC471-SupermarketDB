@@ -19,6 +19,7 @@
     </head>
 
     <body>
+
         <div class="header">
             <div class="row">
                 <h1 class="col-md-12 text-center" id="welcomemsg"> Welcome <?php session_start(); echo $_SESSION["employee_id"]; ?> </h1>
