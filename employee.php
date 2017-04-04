@@ -70,7 +70,7 @@
                                 echo "<tr>
                                         <td>" . $row["eid"] . "</td>
                                         <td>" . $row["fname"] . "</td>
-                                        <td>". $row["lname"] . "</td>
+                                        <td>" . $row["lname"] . "</td>
                                         <td>" . $row["phone_num"] . "</td>
                                         <td>" . $row["title"] . "</td>
                                         <td>" . $row["dep_name"] . "</td>
