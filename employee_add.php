@@ -39,13 +39,10 @@
         } else if (strlen($phone_num1) != 10){
             echo "Invalid phone number";
         } else {
-            $sql = "INSERT INTO 'employee' ('fname', 'lname', 'sin', 'title', 'salary', 'phone_num', 'dep_name', 'super_id') VALUES 
-                  ('$fname1', '$lname1', $sin1, '$title1', $salary1, $phone_num1, '$dep_name1', $super_id1)";
+            $sql = "INSERT INTO employee (fname, lname, sin, title, salary, phone_num, dep_name, super_id) VALUES ('$fname1', '$lname1', '$sin1', '$title1', '$salary1', '$phone_num1', '$dep_name1', '$super_id1')";
         }
 
-        echo $sql;
-
-        if($conn->query($sql) == TRUE){
+        if($conn->query($sql) === TRUE){
             echo "Employee Added";
         }
 

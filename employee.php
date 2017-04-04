@@ -102,15 +102,15 @@
                 </div>
                 <div class="w3-container">
                     <p>To add an employee, please insert the following information below:</p>
-                    <form action="employee_add.php" target="_blank" method="post">
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="First Name" required name="fname"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Last Name" required name="lname"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="SIN" required name="sin"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Salary" required name="salary"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Phone Number" required name="phone_num"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Title" required name="title"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Department Name" required name="dep_name"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Supervisor ID" required name="super_id"></p>
+                    <form action="employee_add.php" target="blank" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="First Name" required name="fname"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Last Name" required name="lname"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="SIN" required name="sin"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Salary" required name="salary"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Phone Number" required name="phone_num"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Title" required name="title"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name" required name="dep_name"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supervisor ID" required name="super_id"></p>
                         <p><button class="w3-button" type="submit">ADD EMPLOYEE</button></p>
                     </form>
                 </div>
