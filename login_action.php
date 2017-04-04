@@ -35,6 +35,8 @@
         if($row > 0){
             echo "Login successful: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu_employee.php\">";
+        } else if($row == 0) {
+            // TODO: redirect for customer id
         }else{
             echo "Login error: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainpage.php\">";

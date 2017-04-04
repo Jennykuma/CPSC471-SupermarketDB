@@ -33,6 +33,7 @@
             <h1 class="w3-jumbo">Welcome</h1>
             <h1 id="name"><?php session_start(); echo $_SESSION["employee_id"]; ?></h1>
 
+            <!-- Main menu items -->
             <div class="w3-padding-32">
                 <div class="w3-bar w3-border">
                     <a href="mainmenu_employee.php" class="w3-bar-item w3-button w3-light-grey">Main Menu</a>
