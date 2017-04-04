@@ -45,7 +45,7 @@
 
         #loginButton {
             position: relative;
-            background-color: #CCC9A1;
+            background-color: #dfdcb4;
             color: white;
             padding: 14px 20px;
             margin: 8px 0px;
@@ -62,21 +62,23 @@
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div class="w3-display-topleft w3-padding-large w3-xlarge" style="color: #424242";>
+    <div class="w3-display-topleft w3-padding-large w3-xlarge" style="color: white";>
         Group 7
     </div>
 
     <div class="transbox">
+        <!--
         <div class="w3-display-topmiddle w3-jumbo w3-padding-large" style="width: 100%;text-align: center;
         margin-top:10%;color: #424242">
             Supermarket Database System
         </div>
+        -->
 
 
-        <div class="w3-display-middle" style="padding-top: 5%">
-            <!--
-            <h1 class="w3-jumbo w3-animate-top">COMING SOON</h1>
-            -->
+        <div class="w3-display-middle">
+
+            <h1 class="w3-jumbo w3-animate-top" style="color: #424242">Supermarket Database System</h1>
+
             <!-- Separator -->
             <hr class="w3-border-grey" style="margin:auto;width:70%;">
             <form action="login_action.php" method="post" style="color: #424242" id="loginForm">

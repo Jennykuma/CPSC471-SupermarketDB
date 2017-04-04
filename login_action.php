@@ -34,7 +34,7 @@
         $row = $result -> fetch_assoc();
         if($row > 0){
             echo "Login successful: Redirecting...";
-            echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu.php\">";
+            echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu_employee.php\">";
         }else{
             echo "Login error: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainpage.php\">";
