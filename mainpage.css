@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding-top: 10px;
+    box-sizing: border-box;
+    /*background-color: #A1C349;*/
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #424242;
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    margin: 0;
+    padding: 0;
+    background: url(supermarketbg.jpg)center center fixed;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+
+#homepagetitle {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+
+    /* Styling */
+    font-family: 'Happy Monkey', sans-serif;
+    font-weight: 300;
+    font-size: 68px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.login {
+    position: relative;
+    padding-top: 50px;
+    margin: auto;
+    width: 500px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: white;
+}
+
+input[type=text], input[type=password], input:focus {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-color: #87A330;
+}
+
+#loginButton {
+    background-color: #CCC9A1;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#loginButton:hover {
+    opacity: 0.6;
+}
+
+.phpStuff {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    width: 1200px;
+    top: 100px;
+
+    /* Styling */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.2em;
+}
