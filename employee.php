@@ -90,10 +90,12 @@
 
         <!-- Add employee btn -->
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
-            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Employee</button></p>
+            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Employee</button>
+                <button onclick="document.getElementById('contact1').style.display='block'" class="w3-button w3-white">Remove Employee</button>
+            </p>
         </div>
 
-        <!-- Contact Modal -->
+        <!-- Add Modal -->
         <div id="contact" class="w3-modal">
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
@@ -102,7 +104,7 @@
                 </div>
                 <div class="w3-container">
                     <p>To add an employee, please insert the following information below:</p>
-                    <form action="employee_add.php" target="blank" method="post">
+                    <form action="employee_add.php" target="_self" method="post">
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="First Name" required name="fname"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Last Name" required name="lname"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="SIN" required name="sin"></p>
@@ -112,6 +114,23 @@
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name" required name="dep_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supervisor ID" required name="super_id"></p>
                         <p><button class="w3-button" type="submit">ADD EMPLOYEE</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remove Modal -->
+        <div id="contact1" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom">
+                <div class="w3-container w3-black">
+                    <span onclick="document.getElementById('contact1').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Remove Employee</h1>
+                </div>
+                <div class="w3-container">
+                    <p>To remove an employee, please insert the following information below:</p>
+                    <form action="employee_remove.php" target="_self" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Employee ID" required name="eid"></p>
+                        <p><button class="w3-button" type="submit">REMOVE EMPLOYEE</button></p>
                     </form>
                 </div>
             </div>
