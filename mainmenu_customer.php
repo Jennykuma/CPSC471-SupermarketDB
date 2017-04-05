@@ -31,7 +31,7 @@
     <!-- Header -->
     <header class=" w3-center" style="padding:15% 16px">
         <h1 class="w3-jumbo">Welcome</h1>
-        <h1 id="name"><?php session_start(); echo $_SESSION["employee_id"]; ?></h1>
+        <h1 id="name"><?php session_start(); echo $_SESSION["id"]; ?></h1>
 
         <div class="w3-padding-32">
             <div class="w3-bar w3-border">

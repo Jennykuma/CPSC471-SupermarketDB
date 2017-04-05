@@ -25,28 +25,35 @@
         }
 
         // SQL QUERY
-        $id = $_POST["employeeID"];
+        $id = $_POST["id"];
         $password = $_POST["pwd"];
-        $_SESSION['employee_id'] = $id;
+        $_SESSION['id'] = $id;
         $_SESSION['pass_word'] = $password;
         $sql = "SELECT eid FROM `employee` WHERE eid = '$id' AND phone_num = '$password'";
         $result = $conn -> query($sql);
         $row = $result -> fetch_assoc();
         if($row > 0){
+            $sql2 = "SELECT fname FROM `employee` WHERE eid=$id";
+            $result2 = $conn -> query($sql2);
+
+            $row = $result2 -> fetch_assoc();
+            $_SESSION['id'] = $row["fname"];
             echo "Login successful: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu_employee.php\">";
         } else if($row == 0) {
-            // TODO: redirect for customer id
+            $sql3 = "SELECT cid FROM `customer` WHERE cid = '$id' AND phone_num = '$password'";
+            $result3 = $conn -> query($sql3);
+            $row2 = $result3 -> fetch_assoc();
+            $sql4 = "SELECT name FROM `customer` WHERE cid=$id";
+            $result4 = $conn -> query($sql4);
+
+            $row4 = $result4 -> fetch_assoc();
+            $_SESSION['id'] = $row4["name"];
+            echo "Login successful: Redirecting...";
+            echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu_customer.php\">";
         }else{
-            echo "Login error: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainpage.php\">";
         }
-
-        $sql2 = "SELECT fname FROM `employee` WHERE eid=$id";
-        $result2 = $conn -> query($sql2);
-
-        $row = $result2 -> fetch_assoc();
-        $_SESSION['employee_id'] = $row["fname"];
 
         ?>
     </body>
