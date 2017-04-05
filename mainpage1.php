@@ -83,7 +83,7 @@
             <hr class="w3-border-grey" style="margin:auto;width:70%;">
             <form action="login_action.php" method="post" style="color: #424242" id="loginForm">
                 <label><b>ID: </b></label>
-                <input type="text" placeholder="Enter ID" name="employeeID">
+                <input type="text" placeholder="Enter ID" name="id">
                 <br>
                 <label><b>Password: </b></label>
                 <input type="password" placeholder="Enter password" name="pwd">
