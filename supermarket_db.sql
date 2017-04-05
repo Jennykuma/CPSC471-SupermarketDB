@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-04 23:09:14
-# Generator: MySQL-Front 6.0  (Build 1.74)
+# Date: 2017-04-05 10:01:57
+# Generator: MySQL-Front 6.0  (Build 1.100)
 
 
 #
@@ -64,7 +64,7 @@ CREATE TABLE `employee` (
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (1,'Derp King','Jenny',123456789,'Jackie\'s Boss',99,'4564564564','Management',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',1),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',1),(7,'Sarah','Jones',784115745,'Sushi Chef',10,'4897941859','Seafood',1),(25,'Cinnamon','Roll',45645645,'Sweetner',1,'1231231234','Bakery',1),(26,'Jackie','Nim',78978978,'Pleb',1,'6969696969','Bakery',1);
+INSERT INTO `employee` VALUES (1,'Jenny','Derp',123456789,'Jackie\'s Boss',99,'1234567890','Management',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',1),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',1),(7,'Sarah','Jones',784115745,'Sushi Chef',10,'4897941859','Seafood',1),(25,'Cinnamon','Roll',45645645,'Sweetner',1,'1231231234','Bakery',1),(26,'Jackie','Nim',78978978,'Pleb',1,'6969696969','Bakery',1),(27,'Justine','Bui',384192684,'Owner',50000,'4031239485','Management',1),(28,'AerJay','Italia',384295384,'Janitor',90000,'4031294853','Cleaning',1);
 
 #
 # Structure for table "dependent"
