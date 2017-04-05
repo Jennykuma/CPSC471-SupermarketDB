@@ -62,18 +62,22 @@
                         $sql = "SELECT * FROM employee";
                         $result = $conn->query($sql);
 
-                        $sell = "SELECT department.dname, department.dnumber, "
+                        $sell = "SELECT department.dname, sells.dep_name, sells.prod_id, product.pid, product.name, product.price, product.sup_name, product.wholesale_price".
+                                "FROM department, sells, product"
 
                         if ($result->num_rows > 0) {
                             echo "<table style='border: 1px solid white' border='1px'><tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price/th></tr>";
                             // output data of each row
+                            // echo department name
+
+                            
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                        <td>" . $row["pid"] . "</td>        // productID 
-                                        <td>" . $row["name"] . "</td>       // productName
-                                        <td>" . $row["price"] . "</td>      // producPrice
-                                        <td>" . $row["phone_num"] . "</td>  // supplierName (employee only)
-                                        <td>" . $row["title"] . "</td>      // wholesalePrice (employee only)
+                                        <td>" . $row["pid"] . "</td>                // productID 
+                                        <td>" . $row["name"] . "</td>               // productName
+                                        <td>" . $row["price"] . "</td>              // productPrice
+                                        <td>" . $row["sup_name"] . "</td>           // supplierName (employee only)
+                                        <td>" . $row["wholesale_price"] . "</td>    // wholesalePrice (employee only)
                                       </tr>";
                             }
                             echo "</table>";
@@ -89,7 +93,7 @@
 
         <!-- Add employee btn -->
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
-            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Employee</button></p>
+            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Product</button></p>
         </div>
 
         <!-- Contact Modal -->
@@ -97,20 +101,17 @@
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
                     <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
-                    <h1>Add Employee</h1>
+                    <h1>Add Product</h1>
                 </div>
                 <div class="w3-container">
                     <p>To add an employee, please insert the following information below:</p>
                     <form action="employee_add.php" target="blank" method="post">
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="First Name" required name="fname"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Last Name" required name="lname"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="SIN" required name="sin"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Salary" required name="salary"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Phone Number" required name="phone_num"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Title" required name="title"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name" required name="dep_name"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supervisor ID" required name="super_id"></p>
-                        <p><button class="w3-button" type="submit">ADD EMPLOYEE</button></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" required name="name"></p>     
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" required name="price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sin"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" required name="salary"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" required name="prod_dep"></p>
+                        <p><button class="w3-button" type="submit">ADD PRODUCT</button></p>
                     </form>
                 </div>
             </div>
