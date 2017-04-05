@@ -1,5 +1,9 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
+<<<<<<< HEAD
 # Date: 2017-04-05 01:04:26
+=======
+# Date: 2017-04-05 11:09:19
+>>>>>>> refs/remotes/origin/master
 # Generator: MySQL-Front 6.0  (Build 1.100)
 
 
@@ -58,13 +62,21 @@ CREATE TABLE `employee` (
   KEY `dep_name_fk3` (`dep_name`),
   CONSTRAINT `dep_name_fk3` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
   CONSTRAINT `emp_id_fk3` FOREIGN KEY (`super_id`) REFERENCES `employee` (`eid`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+>>>>>>> refs/remotes/origin/master
 
 #
 # Data for table "employee"
 #
 
+<<<<<<< HEAD
 INSERT INTO `employee` VALUES (1,'Jenny','Le',123456789,'Boss',9000,'1234567890','Management',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',1),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',1),(7,'Sarah','Jones',784115745,'Sushi Chef',10,'4897941859','Seafood',1);
+=======
+INSERT INTO `employee` VALUES (1,'Jenny','Derp',123456789,'Jackie\'s Boss',99,'1234567890','Management',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',1),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',1),(7,'Sarah','Jones',784115745,'Sushi Chef',10,'4897941859','Seafood',1),(25,'Cinnamon','Roll',45645645,'Sweetner',1,'1231231234','Bakery',1),(26,'Jackie','Nim',78978978,'Pleb',1,'6969696969','Bakery',1),(27,'Justine','Bui',384192684,'Owner',50000,'4031239485','Management',1),(28,'AerJay','Italia',384295384,'Janitor',90000,'4031294853','Cleaning',1),(29,'Spencer','Manzon',475283193,'Sub Janitor',5,'4031935864','Cleaning',1);
+>>>>>>> refs/remotes/origin/master
 
 #
 # Structure for table "dependent"
