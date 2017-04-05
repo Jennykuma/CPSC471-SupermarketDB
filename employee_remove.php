@@ -31,9 +31,9 @@
             $sql = "DELETE FROM employee WHERE ($eid=eid)";
         }
 
-    if($conn->query($sql) === TRUE){
-        echo "Employee Removed";
-    }
+        if($conn->query($sql) === TRUE){
+            echo "Employee Removed";
+        }
 
     ?>
 

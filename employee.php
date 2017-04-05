@@ -90,16 +90,18 @@
 
         <!-- Add employee btn -->
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
-            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Employee</button>
-                <button onclick="document.getElementById('contact1').style.display='block'" class="w3-button w3-white">Remove Employee</button>
+            <p><button onclick="document.getElementById('add').style.display='block'" class="w3-button w3-white">Add Employee</button>
+                <button onclick="document.getElementById('delete').style.display='block'" class="w3-button w3-white">Delete Employee</button>
+                <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Employee</button>
+            </
             </p>
         </div>
 
         <!-- Add Modal -->
-        <div id="contact" class="w3-modal">
+        <div id="add" class="w3-modal">
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
-                    <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <span onclick="document.getElementById('add').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
                     <h1>Add Employee</h1>
                 </div>
                 <div class="w3-container">
@@ -119,11 +121,11 @@
             </div>
         </div>
 
-        <!-- Remove Modal -->
-        <div id="contact1" class="w3-modal">
+        <!-- Delete Modal -->
+        <div id="delete" class="w3-modal">
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
-                    <span onclick="document.getElementById('contact1').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <span onclick="document.getElementById('delete').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
                     <h1>Remove Employee</h1>
                 </div>
                 <div class="w3-container">
@@ -131,6 +133,30 @@
                     <form action="employee_remove.php" target="_self" method="post">
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Employee ID" required name="eid"></p>
                         <p><button class="w3-button" type="submit">REMOVE EMPLOYEE</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Modal -->
+        <div id="update" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom">
+                <div class="w3-container w3-black">
+                    <span onclick="document.getElementById('update').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Update Employee</h1>
+                </div>
+                <div class="w3-container">
+                    <p>To update an employee, please insert the following information below:</p>
+                    <form action="employee_update.php" target="_self" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Employee ID"  name="eid1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="First Name"  name="fname1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Last Name"  name="lname1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Salary"  name="salary1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Phone Number"  name="phone_num1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Title"  name="title1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name"  name="dep_name1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supervisor ID"  name="super_id1"></p>
+                        <p><button class="w3-button" type="submit">UPDATE EMPLOYEE</button></p>
                     </form>
                 </div>
             </div>
