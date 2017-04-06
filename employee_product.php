@@ -36,21 +36,28 @@
                         <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
                         <a href="employee.php" class="w3-bar-item w3-button w3-light-grey">Employee List</a>
                         <a href="#" class="w3-bar-item w3-button">Shift Schedule</a>
-                        <a href="#" class="w3-bar-item w3-button">Product Information</a>
+                        <a href="employee_product.php" class="w3-bar-item w3-button">Product Information</a>
                         <a href="#" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
-                    <h1 class="w3-jumbo">Employees</h1>
+                    <h1 class="w3-jumbo">PRODUCTS</h1>
                     <div class="w3-bar w3-border">
+
+
+
+                        TABLE SHIT GOES HERE
+
                         <?php
 
                         session_start();
+
 
                         $servername = "localhost";
                         $username = "root";
                         $password = "rootPass";
                         $db = "supermarket";
+                        
 
                         $conn = new mysqli($servername, $username, $password, $db);
                         // Check connection
@@ -58,26 +65,53 @@
                             die("Connection failed: " . $conn->connect_error);
                         }
 
-                        // SQL QUERY - GET PRODUCTS 
-                        $sql = "SELECT * FROM employee";
-                        $result = $conn->query($sql);
+                        //mysqli_select_db($conn,"try");
+                        //$sql="SELECT * FROM sells,"
 
-                        $sell = "SELECT department.dname, sells.dep_name, sells.prod_id, product.pid, product.name, product.price, product.sup_name, product.wholesale_price".
-                                "FROM department, sells, product"
 
-                        if ($result->num_rows > 0) {
-                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price/th></tr>";
+
+
+
+                        // SQL GET LIST OF DEPARTMENTS FOR DROPDOWN LIST
+                        $dep_get = "SELECT dep_name FROM sells";
+                        $deps = $conn->query($dep_get);
+                        if ($deps->num_rows > 0){
+                        //$select = mysql_query("Select Department");
+
+                        
+                        // POPULATE DROP DOWN LIST 
+                        $asdf = '<select name="department_name" id="department_name">';
+                        while($dep_list = $deps->fetch_assoc()){
+                            $department_options .="<option>" .$dep_list['dep_name'] . "</option>";
+                            }
+                        
+                        $options = "<form id='deps' name='deps' method='post' action =''>
+                            <p><label>Select Department</label></p>
+                                <select name='deps' id='deps'>
+                                " . $department_options ."
+                                </select>
+                            </form>";
+                        echo $options;
+                        }else{
+                            echo "No departments ";
+                        }
+                        //echo $_POST['deps'];
+
+                        if ($deps->num_rows > 0) {
+                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price</th></tr>";
                             // output data of each row
                             // echo department name
 
-                            
-                            while ($row = $result->fetch_assoc()) {
+                            $prod_get = "SELECT product.pid, product.name, product.price, product.sup_name, product.wholesale_price, sells.prod_id, sells.dep_name FROM product, sells WHERE sells.dep_name = 'Bakery' AND product.pid = sells.prod_id";
+                            $prod_list = $conn -> query($prod_get);
+
+                            while ($row = $prod_list->fetch_assoc()) {
                                 echo "<tr>
-                                        <td>" . $row["pid"] . "</td>                // productID 
-                                        <td>" . $row["name"] . "</td>               // productName
-                                        <td>" . $row["price"] . "</td>              // productPrice
-                                        <td>" . $row["sup_name"] . "</td>           // supplierName (employee only)
-                                        <td>" . $row["wholesale_price"] . "</td>    // wholesalePrice (employee only)
+                                        <td>" . $row["pid"] . "</td>               
+                                        <td>" . $row["name"] . "</td>              
+                                        <td>" . $row["price"] . "</td>             
+                                        <td>" . $row["sup_name"] . "</td>          
+                                        <td>" . $row["wholesale_price"] . "</td>    
                                       </tr>";
                             }
                             echo "</table>";
@@ -86,14 +120,19 @@
                         }
                         $conn->close();
                         ?>
+
+
+
                     </div>
                 </div>
             </header>
         </div>
 
-        <!-- Add employee btn -->
+        <!-- Add product btn -->
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
             <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Product</button></p>
+            <button onclick="document.getElementById('delete').style.display='block'" class="w3-button w3-white">Delete Product</button>
+            <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Product</button>
         </div>
 
         <!-- Contact Modal -->
@@ -104,14 +143,53 @@
                     <h1>Add Product</h1>
                 </div>
                 <div class="w3-container">
-                    <p>To add an employee, please insert the following information below:</p>
-                    <form action="employee_add.php" target="blank" method="post">
+                    <p>To add a product, please insert the following information below:</p>
+                    <form action="product_add.php" target="blank" method="post">
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" required name="name"></p>     
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" required name="price"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sin"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" required name="salary"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" required name="prod_dep"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sup_name"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" required name="wholesale_price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Phone Number" required name="phonenum"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Address" required name="address"></p>
                         <p><button class="w3-button" type="submit">ADD PRODUCT</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Modal -->
+        <div id="delete" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom">
+                <div class="w3-container w3-black">
+                    <span onclick="document.getElementById('delete').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Remove Product</h1>
+                </div>
+                <div class="w3-container">
+                    <p>To remove a product, please insert the following information below:</p>
+                    <form action="product_remove.php" target="_self" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product ID" required name="pid"></p>
+                        <p><button class="w3-button" type="submit">REMOVE PRODUCT</button></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Modal -->
+        <div id="update" class="w3-modal">
+            <div class="w3-modal-content w3-animate-zoom">
+                <div class="w3-container w3-black">
+                    <span onclick="document.getElementById('update').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <h1>Update Product</h1>
+                </div>
+                <div class="w3-container">
+                    <p>To update a product, please insert the following information below:</p>
+                    <form action="product_update.php" target="_self" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product ID*" required name="pid"></p> 
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" name="name"></p>     
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" name="price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" name="sup_name"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" name="wholesale_price"></p>
+                        <p><button class="w3-button" type="submit">UPDATE PRODUCT</button></p>
                     </form>
                 </div>
             </div>
