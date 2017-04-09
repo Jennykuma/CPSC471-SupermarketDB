@@ -189,6 +189,7 @@
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" name="price"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" name="sup_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" name="wholesale_price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" name="department"></p>
                         <p><button class="w3-button" type="submit">UPDATE PRODUCT</button></p>
                     </form>
                 </div>
