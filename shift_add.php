@@ -37,7 +37,7 @@
         } else if (strlen($phone_num1) != 10){
             echo "Invalid phone number";
         }*/ else {
-            $sql = "INSERT INTO shift (date, start_time, end_time, emp_id, dep_name) VALUES ($date1, $start_time1, $end_time1, $emp_id1, $dep_name1)";
+            $sql = "INSERT INTO shift (date, start_time, end_time, emp_id, dep_name) VALUES ('$date1', '$start_time1', '$end_time1', '$emp_id1', '$dep_name1')";
         }
 
         if($conn->query($sql) === TRUE){
