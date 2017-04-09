@@ -34,10 +34,10 @@
                 <div class="w3-padding-32">
                     <div class="w3-bar w3-border">
                         <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
-                        <a href="employee.php" class="w3-bar-item w3-button w3-light-grey">Employee List</a>
-                        <a href="#" class="w3-bar-item w3-button">Shift Schedule</a>
-                        <a href="employee_product.php" class="w3-bar-item w3-button">Product Information</a>
-                        <a href="#" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
+                        <a href="employee.php" class="w3-bar-item w3-button">Employee List</a>
+                        <a href="shift.php" class="w3-bar-item w3-button">Shift Schedule</a>
+                        <a href="employee_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
+                        <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
@@ -168,6 +168,7 @@
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" name="price"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" name="sup_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" name="wholesale_price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" name="department"></p>
                         <p><button class="w3-button" type="submit">UPDATE PRODUCT</button></p>
                     </form>
                 </div>

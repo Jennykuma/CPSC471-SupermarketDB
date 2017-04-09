@@ -28,7 +28,7 @@
     $price1=$_POST["price"];
     $sup_name1=$_POST["sup_name"];
     $wholesale_price1=$_POST["wholesale_price"];
-    $phonenum1=$_POST["phonenum"];
+    $department1=$_POST["department"];
     $address1=$_POST["address"];
 
     $prodcheck = "SELECT product.pid FROM product WHERE product.pid = '$pid1' ";
@@ -58,6 +58,20 @@
                 echo "Supplier does not exist. Unable to update supplier";
             }
 
+        }
+        if (!empty($department1)){
+
+            $supcheck2 = "SELECT department.dep_name FROM sells WHERE department.dep_name = '$department1' ";
+            $check2 = $conn -> query($supcheck2);
+
+            if ($check->num_rows > 0){
+                // get sells.dep_name where sells.prod_id = $pid1 and remove pid from sells.dep_name
+                // add pid to new sells.dep_name
+                
+                $sql = "UPDATE product SET product.sup_name = '$sup_name1' WHERE product.pid = '$pid1' ";
+            }else{
+                echo "Department does not exist";
+            }
         }
         if (!empty($wholesale_price1)) {
             $sql = "UPDATE product SET product.wholesale_price = '$wholesale_price1' WHERE product.pid = '$pid1' ";

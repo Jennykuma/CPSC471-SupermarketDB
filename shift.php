@@ -127,7 +127,7 @@
                 </div>
                 <div class="w3-container">
                     <p>To remove a shift, please insert the following information below:</p>
-                    <form action="employee_remove.php" target="_self" method="post">
+                    <form action="shift_remove.php" target="_self" method="post">
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Shift Number" required name="shift_num"></p>
                         <p><button class="w3-button" type="submit">REMOVE SHIFT</button></p>
                     </form>
@@ -144,13 +144,13 @@
                 </div>
                 <div class="w3-container">
                     <p>To update a shift, please insert the following information below:</p>
-                    <form action="employee_update.php" target="_self" method="post">
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Shift Number" required name="shift_num1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Date" required name="date1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Start Time" required name="start_time1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="End Time" required name="end_time1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Employee ID" required name="emp_id1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name" required name="dep_name1"></p>
+                    <form action="shift_update.php" target="_self" method="post">
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Shift Number" name="shift_num1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Date" name="date1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Start Time" name="start_time1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="End Time" name="end_time1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Employee ID" name="emp_id1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department Name" name="dep_name1"></p>
                         <p><button class="w3-button" type="submit">UPDATE SHIFT</button></p>
                     </form>
                 </div>
