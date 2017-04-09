@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-05 22:55:59
+# Date: 2017-04-09 16:37:21
 # Generator: MySQL-Front 6.0  (Build 1.100)
 
 
@@ -36,7 +36,7 @@ CREATE TABLE `department` (
 # Data for table "department"
 #
 
-INSERT INTO `department` VALUES ('Produce',2),('Bakery',1),('Seafood',2),('Management',3),('Meat',4);
+INSERT INTO `department` VALUES ('Produce',2),('Bakery',1),('Seafood',2),('Management',3),('Meat',4),('Pop',9),('Snacks',11);
 
 #
 # Structure for table "employee"
@@ -125,6 +125,25 @@ CREATE TABLE `names` (
 INSERT INTO `names` VALUES (1,'John'),(2,'John'),(3,'John'),(4,'John'),(5,'John'),(6,'John');
 
 #
+# Structure for table "sells"
+#
+
+DROP TABLE IF EXISTS `sells`;
+CREATE TABLE `sells` (
+  `dep_name` varchar(11) NOT NULL DEFAULT '',
+  `prod_id` int(8) NOT NULL,
+  PRIMARY KEY (`dep_name`,`prod_id`),
+  KEY `dep_name_fk` (`dep_name`),
+  CONSTRAINT `dep_name_fk` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Data for table "sells"
+#
+
+INSERT INTO `sells` VALUES ('Bakery',1),('Management',2),('Meat',6),('Pop',4),('Seafood',5),('Snacks',3);
+
+#
 # Structure for table "shift"
 #
 
@@ -165,7 +184,7 @@ CREATE TABLE `supplier` (
 # Data for table "supplier"
 #
 
-INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718',''),('PartyDrinkSupply','4031238485','');
+INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718','23 9 St. NE'),('PartyDrinkSupply','4031238485','3423 Place NW');
 
 #
 # Structure for table "product"
@@ -178,8 +197,11 @@ CREATE TABLE `product` (
   `price` decimal(5,2) DEFAULT NULL,
   `sup_name` varchar(255) DEFAULT NULL,
   `wholesale_price` decimal(10,2) DEFAULT NULL,
+  `department` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pid`),
   KEY `sup_name_fk` (`sup_name`),
+  KEY `department` (`department`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`department`) REFERENCES `sells` (`dep_name`),
   CONSTRAINT `sup_name_fk` FOREIGN KEY (`sup_name`) REFERENCES `supplier` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
@@ -187,28 +209,7 @@ CREATE TABLE `product` (
 # Data for table "product"
 #
 
-INSERT INTO `product` VALUES (1,'Bread',3.70,'YumYumCuppies',1.50),(2,'Instant Noodles (12 Pk)',11.99,'Snack Stocker Inc.',9.99),(13,'Cupcakes',9.99,'YumYumCuppies',2.11),(14,'Cupcakes',9.99,'YumYumCuppies',2.11),(21,'Spicy Peas',3.99,'Pea Store',1.99),(22,'Spicy Peas',3.99,'Pea Store',1.99),(23,'Spicy Peas',3.99,'Pea Store',1.99),(24,'Spicy Peas',3.99,'Pea Store',1.99),(25,'Pop',1.99,'PartyDrinkSupply',0.50),(26,'Pop',1.99,'PartyDrinkSupply',0.50);
-
-#
-# Structure for table "sells"
-#
-
-DROP TABLE IF EXISTS `sells`;
-CREATE TABLE `sells` (
-  `dep_name` varchar(11) NOT NULL DEFAULT '',
-  `prod_id` int(8) NOT NULL,
-  PRIMARY KEY (`dep_name`,`prod_id`),
-  KEY `dep_name_fk` (`dep_name`),
-  KEY `prod_id_fk` (`prod_id`),
-  CONSTRAINT `dep_name_fk` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
-  CONSTRAINT `prod_id_fk` FOREIGN KEY (`prod_id`) REFERENCES `product` (`pid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Data for table "sells"
-#
-
-INSERT INTO `sells` VALUES ('Bakery',1),('Management',2);
+INSERT INTO `product` VALUES (1,'Bread',3.70,'YumYumCuppies',1.50,'Bakery'),(2,'Instant Noodles (12 Pk)',11.99,'Snack Stocker Inc.',9.99,'Snacks'),(13,'Cupcakes',9.99,'YumYumCuppies',2.11,'Bakery'),(21,'Spicy Peas',3.99,'Pea Store',1.99,'Snacks'),(25,'Grape Soda',1.99,'PartyDrinkSupply',0.50,'Pop');
 
 #
 # Structure for table "transaction"
