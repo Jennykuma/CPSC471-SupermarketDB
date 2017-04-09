@@ -43,9 +43,17 @@
     }else {
         if (!empty($name1)) {
             $sql = "UPDATE product SET product.name = '$name1' WHERE product.pid = '$pid1' ";
+            if($conn->query($sql) === TRUE){
+                    echo "Name Updated\r\n";
+                    echo "<br>";
+                }
         }
         if (!empty($price1)) {
             $sql = "UPDATE product SET product.price = '$price1' WHERE product.pid = '$pid1' ";
+            if($conn->query($sql) === TRUE){
+                    echo "Price Updated\r\n";
+                    echo "<br>";
+                }
         }
         if (!empty($sup_name1)) {
 
@@ -54,31 +62,40 @@
 
             if ($check->num_rows > 0){
                 $sql = "UPDATE product SET product.sup_name = '$sup_name1' WHERE product.pid = '$pid1' ";
+                if($conn->query($sql) === TRUE){
+                    echo "Supplier Updated\r\n";
+                    echo "<br>";
+                }
             }else{
                 echo "Supplier does not exist. Unable to update supplier";
+                echo "<br>";
             }
 
         }
         if (!empty($department1)){
 
-            $supcheck2 = "SELECT department.dep_name FROM sells WHERE department.dep_name = '$department1' ";
+            $supcheck2 = "SELECT sells.dep_name FROM sells WHERE sells.dep_name = '$department1' ";
             $check2 = $conn -> query($supcheck2);
 
-            if ($check->num_rows > 0){
-                // get sells.dep_name where sells.prod_id = $pid1 and remove pid from sells.dep_name
-                // add pid to new sells.dep_name
-                
-                $sql = "UPDATE product SET product.sup_name = '$sup_name1' WHERE product.pid = '$pid1' ";
+            if ($check2->num_rows > 0){
+                $sql = "UPDATE product SET product.department = '$department1' WHERE product.pid = '$pid1' ";
+                if($conn->query($sql) === TRUE){
+                    echo "Department Updated\r\n";
+                    echo "<br>";
+                }
             }else{
                 echo "Department does not exist";
+                echo "<br>";
             }
         }
         if (!empty($wholesale_price1)) {
             $sql = "UPDATE product SET product.wholesale_price = '$wholesale_price1' WHERE product.pid = '$pid1' ";
+            if($conn->query($sql) === TRUE){
+                echo "Wholesale Price Updated\r\n";
+                echo "<br>";
+            }
         }
-        if($conn->query($sql) === TRUE){
-            echo "Product Updated";
-        }
+        
     }
 
     ?>
