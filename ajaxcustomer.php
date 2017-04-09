@@ -23,7 +23,7 @@
         $deps = $conn->query($dep_get);
 
         if ($deps->num_rows > 0) {
-            echo "<table style='border: 1px solid white' border='1px'><tr><th>Department<th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price</th></tr>";
+            echo "<table style='border: 1px solid white' border='1px'><tr><th>Department<th>Product ID</th><th>Product Name</th><th>Price</th></tr>";
             // output data of each row
             // echo department name
 
@@ -36,8 +36,6 @@
                         <td>" . $row["pid"] . "</td>               
                         <td>" . $row["name"] . "</td>              
                         <td>" . $row["price"] . "</td>             
-                        <td>" . $row["sup_name"] . "</td>          
-                        <td>" . $row["wholesale_price"] . "</td>    
                         </tr>";
             }
             echo "</table>";
@@ -52,7 +50,7 @@
         $deps = $conn->query($dep_get);
 
         if ($deps->num_rows > 0) {
-            echo "<table style='border: 1px solid white' border='1px'><tr><th>Department</th><th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price</th></tr>";
+            echo "<table style='border: 1px solid white' border='1px'><tr><th>Department</th><th>Product ID</th><th>Product Name</th><th>Price</th></tr>";
             // output data of each row
             // echo department name
 
@@ -65,8 +63,6 @@
                         <td>" . $row["pid"] . "</td>               
                         <td>" . $row["name"] . "</td>              
                         <td>" . $row["price"] . "</td>             
-                        <td>" . $row["sup_name"] . "</td>          
-                        <td>" . $row["wholesale_price"] . "</td>    
                         </tr>";
             }
             echo "</table>";
