@@ -29,9 +29,6 @@
         $wholesale_price1=$_POST["wholesale_price"];
         $phonenum1=$_POST["phonenum"];
         $address1=$_POST["address"];
-        $department1=$_POST["department"];
-
-        echo "asdfsdf";
 
 
         if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1)){
@@ -42,18 +39,18 @@
             $supcheck = "SELECT supplier.name FROM supplier WHERE supplier.name = '$sup_name1' ";
             $check = $conn -> query($supcheck);
 
-            $supcheck2 = "SELECT department.dep_name FROM sells WHERE department.dep_name = '$department1' ";
-            $check2 = $conn -> query($supcheck2);
-
             if ($check->num_rows > 0){
                 // Don't have to add supplier because supplier exists
                 $sql = "INSERT INTO product (name, price, sup_name, wholesale_price) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1')";
-                $conn->query($sql);
-                $newitem = "SELECT pid from product where $name1=name, $price1=price, $sup_name1=supname, $wholesale_price1=wholesale";
-                $newit = $conn->query($newitem);
-                $slls = "INSERT INTO sells (dep_name,prod_id) VALUES ('$department1', '$newit')";
             }else{
-                    echo "Supplier or Department does not exist";
+                $tosup = "INSERT INTO supplier (name, phone_num, address) VALUES ('$sup_name1', '$phonenum1', '$address')";
+                $sql = "INSERT INTO product (name, price, sup_name, wholesale_price) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1')";
+                if($conn->query($tosup) === TRUE){
+                    echo "Supplier Added\n";
+                }else{
+                    echo "Supplier unable to be added";
+                }   
+
             }
         }
 

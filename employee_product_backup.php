@@ -44,60 +44,80 @@
                     <h1 class="w3-jumbo">PRODUCTS</h1>
                     <div class="w3-bar w3-border">
 
+
+
+                        TABLE SHIT GOES HERE
+
                         <?php
 
                         session_start();
+
+
                         $servername = "localhost";
                         $username = "root";
                         $password = "rootPass";
                         $db = "supermarket";
+                        
+
                         $conn = new mysqli($servername, $username, $password, $db);
                         // Check connection
                         if ($conn->connect_error) {
                             die("Connection failed: " . $conn->connect_error);
                         }
-                        $dbLink=mysqli_connect("localhost","root","rootPass",$db);
-                        ?>
 
-                        <!-- F I L T E R  F O R M -->
+                        //mysqli_select_db($conn,"try");
+                        //$sql="SELECT * FROM sells,"
 
-                        <form name ="department1" action="" method="post">
-                        <table>
-                        <tr>
-                        <td>Select Department</td>
-                        <td><select id="departmentjs" onChange="change_department()">
-                        <option value="selectNull">Select Department</option>
-                        <option value="allProds">All Products</option>
 
-                        <?php
-                        $res=mysqli_query($dbLink,"select * from sells");
-     
-                        while($row=mysqli_fetch_array($res))
-                        {
-                        ?>
-                            <option value="<?php echo $row["dep_name"] ; ?>"><?php echo $row["dep_name"];?></option>
 
-                        <?php
+
+
+                        // SQL GET LIST OF DEPARTMENTS FOR DROPDOWN LIST
+                        $dep_get = "SELECT dep_name FROM sells";
+                        $deps = $conn->query($dep_get);
+                        if ($deps->num_rows > 0){
+                        //$select = mysql_query("Select Department");
+
+                        
+                        // POPULATE DROP DOWN LIST 
+                        $asdf = '<select name="department_name" id="department_name">';
+                        while($dep_list = $deps->fetch_assoc()){
+                            $department_options .="<option>" .$dep_list['dep_name'] . "</option>";
+                            }
+                        
+                        $options = "<form id='deps' name='deps' method='post' action =''>
+                            <p><label>Select Department</label></p>
+                                <select name='deps' id='deps'>
+                                " . $department_options ."
+                                </select>
+                            </form>";
+                        echo $options;
+                        }else{
+                            echo "No departments ";
                         }
-                        ?>
-                        </select>
-                        </td>
-                        </tr>
-                        </table>
+                        //echo $_POST['deps'];
 
-                        <script type="text/javascript">
-                        function change_department(){
-                            var xmlhttp=new XMLHttpRequest();
-                            xmlhttp.open("GET", "ajax.php?department="+document.getElementById("departmentjs").value, false);
-                            xmlhttp.send(null);
-                            document.getElementById("prods").innerHTML=xmlhttp.responseText;
+                        if ($deps->num_rows > 0) {
+                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Product ID</th><th>Product Name</th><th>Price</th><th>Supplier</th><th>Wholesale Price</th></tr>";
+                            // output data of each row
+                            // echo department name
+
+                            $prod_get = "SELECT product.pid, product.name, product.price, product.sup_name, product.wholesale_price, sells.prod_id, sells.dep_name FROM product, sells WHERE sells.dep_name = 'Bakery' AND product.pid = sells.prod_id";
+                            $prod_list = $conn -> query($prod_get);
+
+                            while ($row = $prod_list->fetch_assoc()) {
+                                echo "<tr>
+                                        <td>" . $row["pid"] . "</td>               
+                                        <td>" . $row["name"] . "</td>              
+                                        <td>" . $row["price"] . "</td>             
+                                        <td>" . $row["sup_name"] . "</td>          
+                                        <td>" . $row["wholesale_price"] . "</td>    
+                                      </tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "0 results";
                         }
-                        </script>
-
-                        <div id="prods">
-                        </div>
-
-                        <?php
                         $conn->close();
                         ?>
 
@@ -129,7 +149,8 @@
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" required name="price"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sup_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" required name="wholesale_price"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" required name="department"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Phone Number" required name="phonenum"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Address" required name="address"></p>
                         <p><button class="w3-button" type="submit">ADD PRODUCT</button></p>
                     </form>
                 </div>
