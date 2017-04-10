@@ -33,12 +33,13 @@
             <header class=" w3-center">
                 <div class="w3-padding-32">
                     <div class="w3-bar w3-border">
-                        <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
-                        <a href="employee_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
+                        <a href="mainmenu_customer.php" class="w3-bar-item w3-button">Main Menu</a>
+                        <a href="customer_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
+                        <a href="customer_giveFeedback.php" class="w3-bar-item w3-button w3-hide-small">Give Feedback</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
-                    <h1 class="w3-jumbo">PRODUCTS</h1>
+                    <h1 class="w3-jumbo">Products</h1>
                     <div class="w3-bar w3-border">
 
                         <?php

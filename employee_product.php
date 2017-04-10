@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="w3-padding-32">
-                    <h1 class="w3-jumbo">PRODUCTS</h1>
+                    <h1 class="w3-jumbo">Products</h1>
                     <div class="w3-bar w3-border">
 
                         <?php

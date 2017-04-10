@@ -35,9 +35,9 @@
 
         <div class="w3-padding-32">
             <div class="w3-bar w3-border">
-                <a href="mainmenu_employee.php" class="w3-bar-item w3-button w3-light-grey">Main Menu</a>
-                <a href="employee.php" class="w3-bar-item w3-button">Product Information</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small">Give Feedback</a>
+                <a href="mainmenu_customer.php" class="w3-bar-item w3-button w3-light-grey">Main Menu</a>
+                <a href="customer_product.php" class="w3-bar-item w3-button">Product Information</a>
+                <a href="customer_giveFeedback.php" class="w3-bar-item w3-button w3-hide-small">Give Feedback</a>
             </div>
         </div>
     </header>
