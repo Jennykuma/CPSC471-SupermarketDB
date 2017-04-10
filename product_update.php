@@ -24,19 +24,19 @@
     }
 
     $pid1=$_POST["pid1"];
-    $name1=$_POST["name"];
-    $price1=$_POST["price"];
-    $sup_name1=$_POST["sup_name"];
-    $wholesale_price1=$_POST["wholesale_price"];
-    $department1=$_POST["department"];
-    $address1=$_POST["address"];
+    $name1=$_POST["name1"];
+    $price1=$_POST["price1"];
+    $sup_name1=$_POST["sup_name1"];
+    $wholesale_price1=$_POST["wholesale_price1"];
+    $department1=$_POST["department1"];
+    $address1=$_POST["address1"];
 
     $prodcheck = "SELECT product.pid FROM product WHERE product.pid = '$pid1' ";
     $pidcheck = $conn -> query($prodcheck);  
 
-    //if ($pidcheck->num_rows < 1){
-    //    echo "Invalid Product ID";
-    //}  
+    if ($pidcheck->num_rows < 1){
+        echo "Invalid Product ID";
+    }  
 
     if (strlen($phone_num) != 10 && !empty($phone_num)){
         echo "Invalid phone number";
