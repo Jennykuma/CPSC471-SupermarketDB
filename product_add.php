@@ -39,9 +39,9 @@
 
             if ($check->num_rows == 0){
                 echo "Supplier does not exist";
-            }/*else if ($check2->num_rows == 0){
+            }else if ($check2->num_rows == 0){
                 echo "Department does not exist";
-            }*/else{
+            }else{
                 $sql = "INSERT INTO `product` (`name`, `price`, `sup_name`, `wholesale_price`, `department`) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$dep_name1')";
                 $conn->query($sql);
             }
