@@ -1,10 +1,3 @@
-GET HEADER FROM EMPLOYEE
-COPY THE TABLE FROM AJAXCUSTOMER.PHP 
-
-REPLACE THE <H1>PRODUCT</H1> CODE WITH TABLE CODE
-ALL WE'RE DOING IS LISTING THE EXISTING TRANSACTIONS TO THE TABLE
-
-
 <!DOCTYPE html>
 <html>
     <title>Supermarket Database System</title>
@@ -40,9 +33,12 @@ ALL WE'RE DOING IS LISTING THE EXISTING TRANSACTIONS TO THE TABLE
             <header class=" w3-center">
                 <div class="w3-padding-32">
                     <div class="w3-bar w3-border">
-                        <a href="mainmenu_customer.php" class="w3-bar-item w3-button">Main Menu</a>
-                        <a href="customer_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
-                        <a href="customer_giveFeedback.php" class="w3-bar-item w3-button w3-hide-small">Give Feedback</a>
+                        <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
+                        <a href="employee.php" class="w3-bar-item w3-button">Employee List</a>
+                        <a href="shift.php" class="w3-bar-item w3-button">Shift Schedule</a>
+                        <a href="employee_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
+                        <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
+                        <a href="transaction.php" class="w3-bar-item w3-button w3-hide-small">Transaction History</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
@@ -64,45 +60,33 @@ ALL WE'RE DOING IS LISTING THE EXISTING TRANSACTIONS TO THE TABLE
                         $dbLink=mysqli_connect("localhost","root","rootPass",$db);
                         ?>
 
-                        <!-- F I L T E R  F O R M -->
-
-                        <form name ="department1" action="" method="post">
-                        <table>
-                        <tr>
-                        <td>Select Department</td>
-                        <td><select id="departmentjs" onChange="change_department()">
-                        <option value="selectNull">Select Department</option>
-                        <option value="allProds">All Products</option>
+                        ADD HERE
+                        
 
                         <?php
-                        $res=mysqli_query($dbLink,"select * from sells");
-     
-                        while($row=mysqli_fetch_array($res))
-                        {
-                        ?>
-                            <option value="<?php echo $row["dep_name"] ; ?>"><?php echo $row["dep_name"];?></option>
 
-                        <?php
+                        // SQL QUERY
+                        $sql = "SELECT * FROM transaction, product";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Transaction ID</th><th>Time</th><th>Price</th><th>Payment Method</th><th>Product</th></tr>";
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                        <td>" . $row["tid"] . "</td>
+                                        <td>" . $row["time"] . "</td>
+                                        <td>" . $row["price"] . "</td>
+                                        <td>" . $row["payment_method"] . "</td>
+                                        <td>" . $row["pid"] . "</td>
+                                      </tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "0 results";
                         }
-                        ?>
-                        </select>
-                        </td>
-                        </tr>
-                        </table>
 
-                        <script type="text/javascript">
-                        function change_department(){
-                            var xmlhttp=new XMLHttpRequest();
-                            xmlhttp.open("GET", "ajaxcustomer.php?department="+document.getElementById("departmentjs").value, false);
-                            xmlhttp.send(null);
-                            document.getElementById("prods").innerHTML=xmlhttp.responseText;
-                        }
-                        </script>
 
-                        <div id="prods">
-                        </div>
-
-                        <?php
                         $conn->close();
                         ?>
                     </div>
