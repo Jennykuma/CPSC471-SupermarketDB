@@ -40,29 +40,21 @@
         </div>
         <div class="w3-padding-32">
             <h1 class="w3-jumbo">Give Feedback</h1>
-            <div class="w3-bar w3-border">
 
-                <?php
+            <form action="feedback_add.php" method="post">
+                Department <input type="text" name="dep_name"><br>
+                <p></p>
+                Rating (1 worsts - 10 best): <input type="text" name="rating"><br>
+                <p></p>
+                Feedback: <input type="text" name="feedback"><br>
+                <p></p>
+                <input type="submit">
+            </form>
 
-                session_start();
-                $servername = "localhost";
-                $username = "root";
-                $password = "rootPass";
-                $db = "supermarket";
-                $conn = new mysqli($servername, $username, $password, $db);
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-                $dbLink=mysqli_connect("localhost","root","rootPass",$db);
-
-
-                $conn->close();
-                ?>
-            </div>
         </div>
     </header>
 </div>
+
 
 
 <div class="w3-display-bottomleft w3-padding-large" style="color: white">

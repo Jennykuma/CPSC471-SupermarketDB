@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-10 01:31:26
-# Generator: MySQL-Front 6.0  (Build 1.100)
+# Date: 2017-04-10 03:30:49
+# Generator: MySQL-Front 6.0  (Build 1.74)
 
 
 #
@@ -19,7 +19,7 @@ CREATE TABLE `customer` (
 # Data for table "customer"
 #
 
-INSERT INTO `customer` VALUES (1,'Tyrone',1234567890);
+INSERT INTO `customer` VALUES (1,'Tyrone',1234567891);
 
 #
 # Structure for table "department"
@@ -95,8 +95,8 @@ CREATE TABLE `gives_feedback` (
   `cust_id` int(8) NOT NULL,
   `dep_name` varchar(255) NOT NULL,
   `rating` int(10) DEFAULT NULL,
-  `feedback` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`cust_id`,`dep_name`),
+  `feedback` varchar(255) NOT NULL,
+  PRIMARY KEY (`cust_id`,`dep_name`,`feedback`),
   KEY `dep_name` (`dep_name`),
   CONSTRAINT `cust_id` FOREIGN KEY (`cust_id`) REFERENCES `customer` (`cid`),
   CONSTRAINT `dep_name` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`)
@@ -106,6 +106,7 @@ CREATE TABLE `gives_feedback` (
 # Data for table "gives_feedback"
 #
 
+INSERT INTO `gives_feedback` VALUES (1,'Bakery',4,'sdfdsfdsf'),(1,'Bakery',10,'Yeeeeeast'),(1,'Management',1,'The worst'),(1,'Meat',10,'Yeast');
 
 #
 # Structure for table "names"
