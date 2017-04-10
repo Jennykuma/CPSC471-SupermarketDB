@@ -38,12 +38,12 @@
                         <a href="shift.php" class="w3-bar-item w3-button">Shift Schedule</a>
                         <a href="employee_product.php" class="w3-bar-item w3-button w3-hide-small">Product Information</a>
                         <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
-                        <a href="transaction.php" class="w3-bar-item w3-button w3-light-grey">Transaction History</a>
-                        <a href="employee_feedback.php" class="w3-bar-item w3-button w3-hide-small">Customer Feedback</a>
+                        <a href="transaction.php" class="w3-bar-item w3-button w3-hide-small">Transaction History</a>
+                        <a href="transaction.php" class="w3-bar-item w3-button w3-light-grey">Customer Feedback</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
-                    <h1 class="w3-jumbo">Transaction History</h1>
+                    <h1 class="w3-jumbo">Customer Feedback</h1>
                     <div class="w3-bar w3-border">
 
                         <?php
@@ -65,23 +65,23 @@
                         <?php
 
                         // SQL QUERY
-                        $sql = "SELECT * FROM transaction";
+                        $sql = "SELECT * FROM gives_feedback";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
-                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Transaction ID</th><th>Time</th><th>Price</th><th>Payment Method</th></tr>";
+                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Customer ID</th><th>Department</th><th>Rating</th><th>Feedback</th></tr>";
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
-                                        <td>" . $row["tid"] . "</td>
-                                        <td>" . $row["time"] . "</td>
-                                        <td>" . $row["price"] . "</td>
-                                        <td>" . $row["payment_method"] . "</td>
+                                        <td>" . $row["cust_id"] . "</td>
+                                        <td>" . $row["dep_name"] . "</td>
+                                        <td>" . $row["rating"] . "</td>
+                                        <td>" . $row["feedback"] . "</td>
                                       </tr>";
                             }
                             echo "</table>";
                         } else {
-                            echo "0 results";
+                            echo "There is no feedback given yet.";
                         }
 
 

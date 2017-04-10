@@ -42,6 +42,7 @@
                     <a href="employee_product.php" class="w3-bar-item w3-button">Product Information</a>
                     <a href="supplier.php" class="w3-bar-item w3-button">Supplier Information</a>
                     <a href="transaction.php" class="w3-bar-item w3-button w3-hide-small">Transaction History</a>
+                    <a href="employee_feedback.php" class="w3-bar-item w3-button w3-hide-small">Customer Feedback</a>
                 </div>
             </div>
         </header>
