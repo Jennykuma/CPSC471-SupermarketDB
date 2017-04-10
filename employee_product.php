@@ -75,7 +75,7 @@
                         while($row=mysqli_fetch_array($res))
                         {
                         ?>
-                            <option value="<?php echo $row["dep_name"] ; ?>"><?php echo $row["dep_name"];?></option>
+                            <option value="<?php echo $row["dname"] ; ?>"><?php echo $row["dname"];?></option>
 
                         <?php
                         }
