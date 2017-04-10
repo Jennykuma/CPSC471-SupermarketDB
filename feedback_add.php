@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Refresh" content="3; customer_giveFeedback.php">
+    <meta http-equiv="Refresh" content="2; customer_giveFeedback.php">
     <title>Feedback Added</title>
 </head>
 
@@ -23,11 +23,11 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $cid1=$_SESSION['id'];
+    $name1=$_SESSION['id'];
     $pwd1=$_SESSION['pass_word'];
-    $sql1 = "SELECT * FROM `customer` WHERE name = '$cid1' AND phone_num= '$pwd1'";
-    $result = $conn -> query($sql1);
-    $row= $result -> fetch_assoc();
+    $sql1 = "SELECT * FROM `customer` WHERE name = '$name1' AND phone_num= '$pwd1'";
+    $result1 = $conn -> query($sql1);
+    $row= $result1 -> fetch_assoc();
     $cust_id1= $row["cid"];
 
     $dep_name1=$_POST["dep_name"];

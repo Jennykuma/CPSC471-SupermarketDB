@@ -46,9 +46,9 @@
             $row2 = $result3 -> fetch_assoc();
             $sql4 = "SELECT name FROM `customer` WHERE cid=$id";
             $result4 = $conn -> query($sql4);
-
             $row4 = $result4 -> fetch_assoc();
             $_SESSION['id'] = $row4["name"];
+
             echo "Login successful: Redirecting...";
             echo "<meta http-equiv=\"Refresh\" content=\"2; mainmenu_customer.php\">";
         }else{
