@@ -39,7 +39,7 @@
             $sql = $sql . "date = '$date', ";
         }
         if (!empty($start_time)) {
-            $sql = $sql . "start_time = 'start_time', ";
+            $sql = $sql . "start_time = '$start_time', ";
         }
         if (!empty($end_time)) {
             $sql = $sql . "end_time = '$end_time', ";
