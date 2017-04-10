@@ -74,7 +74,7 @@
         }
         if (!empty($department1)){
 
-            $supcheck2 = "SELECT sells.dep_name FROM sells WHERE sells.dep_name = '$department1' ";
+            $supcheck2 = "SELECT department.dname FROM department WHERE department.dname = '$department1' ";
             $check2 = $conn -> query($supcheck2);
 
             if ($check2->num_rows > 0){

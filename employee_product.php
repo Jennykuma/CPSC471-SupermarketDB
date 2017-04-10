@@ -70,7 +70,7 @@
                         <option value="allProds">All Products</option>
 
                         <?php
-                        $res=mysqli_query($dbLink,"select * from sells");
+                        $res=mysqli_query($dbLink,"select * from department");
      
                         while($row=mysqli_fetch_array($res))
                         {
