@@ -9,8 +9,6 @@
 
     <body>
         <?php
-        echo "DO SOMETHING";
-
         session_start();
 
         $servername = "localhost";
@@ -32,18 +30,21 @@
 
 
 
+
+
+
         if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1) || empty($department1)){
             echo "Error: One or more of the required fields are empty";
         }else{
-            $supcheck = "SELECT name FROM supplier WHERE name = '$sup_name1' ";
+            $supcheck = "SELECT * FROM supplier WHERE name = $sup_name1 ";
             $check = $conn -> query($supcheck);
 
-            $supcheck2 = "SELECT dep_name FROM sells WHERE dep_name = '$department1' ";
+            $supcheck2 = "SELECT * FROM sells WHERE dep_name = $department1 ";
             $check2 = $conn -> query($supcheck2);
 
-            if ($check->num_rows <= 0){
+            if ($check->num_rows == 0){
                 echo "Supplier does not exist";
-            }else if ($check2->num_rows <= 0){
+            }else if ($check2->num_rows == 0){
                 echo "Department does not exist";
             }else{
                 $sql = "INSERT INTO product (name, price, sup_name, wholesale_price, department) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$department1')";
@@ -56,8 +57,8 @@
         }else{
             echo "Product unable to be added";
         }   
-        ?>
 
-</body>
+    ?>
 
+    </body>
 </html>
