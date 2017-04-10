@@ -3,12 +3,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        
+        <meta http-equiv="Refresh" content="4; employee_product.php">
         <title>Product Added</title>
     </head>
 
     <body>
         <?php
+        echo "DO SOMETHING";
 
         session_start();
 
@@ -29,33 +30,29 @@
         $wholesale_price1=$_POST["wholesale_price"];
         $department1=$_POST["department"];
 
-        echo "asdfsdf";
 
 
-        if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1)){
+        if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1) || empty($department1)){
             echo "Error: One or more of the required fields are empty";
-        }else if (strlen($phonenum1) != 10){
-            echo "Invalid phone number";
         }else{
-            $supcheck = "SELECT supplier.name FROM supplier WHERE supplier.name = '$sup_name1' ";
+            $supcheck = "SELECT name FROM supplier WHERE name = '$sup_name1' ";
             $check = $conn -> query($supcheck);
 
-            $supcheck2 = "SELECT department.dep_name FROM sells WHERE department.dep_name = '$department1' ";
+            $supcheck2 = "SELECT dep_name FROM sells WHERE dep_name = '$department1' ";
             $check2 = $conn -> query($supcheck2);
 
-            if ($check->num_rows > 0){
-                // Don't have to add supplier because supplier exists
-                $sql = "INSERT INTO product (name, price, sup_name, wholesale_price, department) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$department1')";
-                $conn->query($sql);
-            }else if ($check2->num_rows < 1){
+            if ($check->num_rows <= 0){
+                echo "Supplier does not exist";
+            }else if ($check2->num_rows <= 0){
                 echo "Department does not exist";
             }else{
-                echo "Supplier does not exist";
+                $sql = "INSERT INTO product (name, price, sup_name, wholesale_price, department) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$department1')";
+                $conn->query($sql);
             }
         }
 
         if($conn->query($sql) === TRUE){
-                    echo "Product Added\r\n";
+            echo "Product Added\r\n";
         }else{
             echo "Product unable to be added";
         }   

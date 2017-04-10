@@ -110,21 +110,21 @@
 
         <!-- Add product btn -->
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
-            <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-white">Add Product</button></p>
+            <p><button onclick="document.getElementById('addprod').style.display='block'" class="w3-button w3-white">Add Product</button>
             <button onclick="document.getElementById('delete').style.display='block'" class="w3-button w3-white">Delete Product</button>
-            <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Product</button>
+            <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Product</button></p>
         </div>
 
-        <!-- Contact Modal -->
-        <div id="contact" class="w3-modal">
+        <!-- Add Modal -->
+        <div id="addprod" class="w3-modal">
             <div class="w3-modal-content w3-animate-zoom">
                 <div class="w3-container w3-black">
-                    <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
+                    <span onclick="document.getElementById('addprod').style.display='none'" class="w3-button w3-display-topright w3-large">x</span>
                     <h1>Add Product</h1>
                 </div>
                 <div class="w3-container">
                     <p>To add a product, please insert the following information below:</p>
-                    <form action="product_add.php" target="blank" method="post">
+                    <form action="product_add.php" target="_self" method="post">
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" required name="name"></p>     
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" required name="price"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sup_name"></p>
