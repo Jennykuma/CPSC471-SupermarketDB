@@ -112,7 +112,8 @@
         <div class="w3-display-bottommiddle w3-hover-opacity w3-container w3-xlarge" style="opacity: 0.8">
             <p><button onclick="document.getElementById('addprod').style.display='block'" class="w3-button w3-white">Add Product</button>
             <button onclick="document.getElementById('delete').style.display='block'" class="w3-button w3-white">Delete Product</button>
-            <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Product</button></p>
+            <button onclick="document.getElementById('update').style.display='block'" class="w3-button w3-white">Update Product</button>
+            </p>
         </div>
 
         <!-- Add Modal -->

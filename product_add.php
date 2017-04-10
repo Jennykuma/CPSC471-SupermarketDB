@@ -39,6 +39,7 @@
             $supcheck = "SELECT * FROM supplier WHERE name = $sup_name1 ";
             $check = $conn -> query($supcheck);
 
+            
             $supcheck2 = "SELECT * FROM department WHERE dname = $department1 ";
             $check2 = $conn -> query($supcheck2);
 
