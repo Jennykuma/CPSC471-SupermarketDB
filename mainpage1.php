@@ -93,7 +93,7 @@
                 </div>
                 <!-- Separator -->
             <hr class="w3-border-grey" style="margin:auto;width:70%;">
-                <p class="w3-xlarge w3-center">Suppliers please click <a href="#" >here</a></p>
+                <p class="w3-xlarge w3-center">Suppliers please click <a href="supplier_contact.php" >here</a></p>
         </div>
     </div>
 
