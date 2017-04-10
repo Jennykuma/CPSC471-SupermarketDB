@@ -1,6 +1,6 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-10 04:03:06
-# Generator: MySQL-Front 6.0  (Build 1.74)
+# Date: 2017-04-10 16:24:22
+# Generator: MySQL-Front 6.0  (Build 1.100)
 
 
 #
@@ -19,7 +19,7 @@ CREATE TABLE `customer` (
 # Data for table "customer"
 #
 
-INSERT INTO `customer` VALUES (1,'Tyrone',1234567891);
+INSERT INTO `customer` VALUES (1,'Tyrone',123456789);
 
 #
 # Structure for table "department"
@@ -58,13 +58,13 @@ CREATE TABLE `employee` (
   KEY `dep_name_fk3` (`dep_name`),
   CONSTRAINT `dep_name_fk3` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
   CONSTRAINT `emp_id_fk3` FOREIGN KEY (`super_id`) REFERENCES `employee` (`eid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "employee"
 #
 
-INSERT INTO `employee` VALUES (1,'Jenny','Le',123456789,'Boss',9000,'1234567890','Management',NULL),(2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',1),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',1),(7,'Sarah','Jones',784115745,'Sushi Chef',10,'4897941859','Seafood',1);
+INSERT INTO `employee` VALUES (2,'Aron','Chan',987654321,'Boss',10000,'9876543210','Management',NULL),(3,'Mary','Wang',459721324,'Cashier',10,'8462485555','Management',2),(4,'Martin','Wong',444975346,'Cashier',10,'4894511572','Management',2),(5,'Gordon','Lee',775245619,'Butcher',10,'4897526548','Meat',2),(6,'Henry','Wilson',159724896,'Baker',10,'7663548941','Bakery',2);
 
 #
 # Structure for table "dependent"
@@ -106,7 +106,7 @@ CREATE TABLE `gives_feedback` (
 # Data for table "gives_feedback"
 #
 
-INSERT INTO `gives_feedback` VALUES (1,'Bakery',4,'sdfdsfdsf'),(1,'Bakery',10,'Yeeeeeast'),(1,'Bakery',4,'Yeeeeeeeeast'),(1,'Management',1,'The worst'),(1,'Meat',10,'Yeast');
+INSERT INTO `gives_feedback` VALUES (1,'Bakery',4,'sdfdsfdsf'),(1,'Bakery',10,'Yeeeeeast'),(1,'Bakery',4,'Yeeeeeeeeast'),(1,'Management',1,'The worst'),(1,'Meat',9,'very meaty'),(1,'Meat',10,'Yeast');
 
 #
 # Structure for table "names"
@@ -160,14 +160,14 @@ CREATE TABLE `shift` (
   KEY `dep_name_fk2` (`dep_name`),
   KEY `emp_id_fk2` (`emp_id`),
   CONSTRAINT `dep_name_fk2` FOREIGN KEY (`dep_name`) REFERENCES `department` (`dname`),
-  CONSTRAINT `emp_id_fk2` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`eid`)
+  CONSTRAINT `emp_id_fk2` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`eid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
 # Data for table "shift"
 #
 
-INSERT INTO `shift` VALUES (1,'2017-04-16','09:00:00','17:00:00',3,'Management'),(2,'2017-04-16','09:00:00','17:00:00',4,'Management'),(3,'2017-04-16','08:00:00','17:00:00',5,'Meat'),(4,'2017-04-16','08:00:00','17:00:00',6,'Bakery'),(5,'2017-04-16','08:00:00','17:00:00',7,'Seafood');
+INSERT INTO `shift` VALUES (1,'2017-04-16','09:00:00','17:00:00',3,'Management'),(2,'2017-04-16','09:00:00','17:00:00',4,'Management'),(3,'2017-04-16','08:00:00','17:00:00',5,'Meat'),(4,'2017-04-16','08:00:00','17:00:00',6,'Bakery');
 
 #
 # Structure for table "supplier"
@@ -185,7 +185,7 @@ CREATE TABLE `supplier` (
 # Data for table "supplier"
 #
 
-INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718','23 9 St. NE'),('PartyDrinkSupply','4031238485','3423 Place NW'),('Jel Le','4035083957','45 Jello Way NW'),('Pupper Pups','4035108197','135 Pupp Dr NW');
+INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718','23 9 St. NE'),('PartyDrinkSupply','4031238485','3423 Place NW'),('Jel Le','4035083957','45 Jello Way NW'),('Pupper Pups','4035108197','135 Pupp Dr NW'),('Starbucks','4035963485','123 abc way');
 
 #
 # Structure for table "product"
@@ -204,13 +204,13 @@ CREATE TABLE `product` (
   KEY `department` (`department`),
   CONSTRAINT `product_ibfk_1` FOREIGN KEY (`department`) REFERENCES `sells` (`dep_name`),
   CONSTRAINT `sup_name_fk` FOREIGN KEY (`sup_name`) REFERENCES `supplier` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 #
 # Data for table "product"
 #
 
-INSERT INTO `product` VALUES (1,'Bread',3.70,'YumYumCuppies',1.50,'Bakery'),(2,'Instant Noodles (12 Pk)',11.99,'Snack Stocker Inc.',9.99,'Snacks'),(21,'Spicy Peas',3.99,'Pea Store',1.99,'Snacks'),(25,'Grape Soda',2.99,'PartyDrinkSupply',0.50,'Pop');
+INSERT INTO `product` VALUES (1,'Bread',3.70,'YumYumCuppies',1.50,'Bakery'),(2,'Instant Noodles (12 Pk)',11.99,'Snack Stocker Inc.',9.99,'Snacks'),(21,'Spicy Peas',3.99,'Pea Store',1.99,'Snacks'),(25,'Grape Soda',2.99,'PartyDrinkSupply',0.50,'Pop'),(28,'Croissant',2.99,'Starbucks',5.00,'Bakery'),(29,'Croissant',2.99,'Starbucks',5.00,'Bakery');
 
 #
 # Structure for table "transaction"
