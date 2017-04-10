@@ -35,7 +35,7 @@
                 <div class="w3-padding-32">
                     <div class="w3-bar w3-border">
                         <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
-                        <a href="employee.php" class="w3-bar-item">Employee List</a>
+                        <a href="employee.php" class="w3-bar-item w3-button">Employee List</a>
                         <a href="shift.php" class="w3-bar-item w3-button w3-light-grey">Shift Schedule</a>
                         <a href="employee_product.php" class="w3-bar-item w3-button">Product Information</a>
                         <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
