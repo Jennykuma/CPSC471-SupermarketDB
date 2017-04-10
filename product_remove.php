@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="Refresh" content="4; employee_product.php">
+        <meta http-equiv="Refresh" content="2; employee_product.php">
         <title>Product Removed</title>
     </head>
 

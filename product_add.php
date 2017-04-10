@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="Refresh" content="4; employee_product.php">
+        <meta http-equiv="Refresh" content="2; employee_product.php">
         <title>Product Added</title>
     </head>
 
@@ -33,7 +33,6 @@
             $supcheck = "SELECT * FROM supplier WHERE name = '$sup_name1'";
             $check = $conn -> query($supcheck);
 
-            
             $supcheck2 = "SELECT * FROM department WHERE dname = '$dep_name1'";
             $check2 = $conn -> query($supcheck2);
 

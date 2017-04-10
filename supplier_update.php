@@ -42,9 +42,6 @@
         if (!empty($address)) {
             $sql = $sql . "address = '$address', ";
         }
-        if (!empty($phone_num)) {
-            $sql = $sql . "phone_num = '$phone_num', ";
-        }
         $sql = substr($sql, 0, -2);
         $sql = $sql. " WHERE name = '$name'";
 

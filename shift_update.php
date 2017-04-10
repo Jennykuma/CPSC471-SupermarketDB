@@ -52,7 +52,6 @@
         }
         $sql = substr($sql, 0, -2);
         $sql = $sql. " WHERE shift_num = '$shift_num'";
-        echo $sql;
 
         if($conn->query($sql) === TRUE){
             echo "Shift Updated";

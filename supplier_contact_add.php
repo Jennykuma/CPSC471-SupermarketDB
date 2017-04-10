@@ -31,7 +31,8 @@
         echo "Error: Supplier name required!";
     } /*else if (strlen($super_id1) != 8){
                 echo "Invalid supervisor ID";
-            }*/ else if (strlen($phone_num1) != 10){
+            }*/
+    else if (strlen($phone_num1) != 10){
         echo "Invalid phone number";
     } else {
         $sql = "INSERT INTO supplier (name, phone_num, address) VALUES ('$name1', '$phone_num1', '$address1')";

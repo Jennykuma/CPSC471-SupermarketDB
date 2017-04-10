@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Refresh" content="2; employee.php">
-    <title>Employee Removed</title>
+    <title>Employee Updated</title>
 </head>
 
 <body>
