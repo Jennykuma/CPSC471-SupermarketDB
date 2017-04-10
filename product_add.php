@@ -10,7 +10,6 @@
     <body>
         <?php
         session_start();
-
         $servername = "localhost";
         $username = "root";
         $password = "rootPass";
@@ -22,33 +21,28 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
+        $dep_name1=$_POST["dep_name"];
         $name1=$_POST["name"];
         $price1=$_POST["price"];
         $sup_name1=$_POST["sup_name"];
         $wholesale_price1=$_POST["wholesale_price"];
-        $department1=$_POST["department"];
 
-
-
-
-
-
-        if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1) || empty($department1)){
+        if(empty($name1) || empty($price1) || empty($sup_name1) || empty($wholesale_price1)){
             echo "Error: One or more of the required fields are empty";
         }else{
-            $supcheck = "SELECT * FROM supplier WHERE name = $sup_name1 ";
+            $supcheck = "SELECT * FROM supplier WHERE name = '$sup_name1'";
             $check = $conn -> query($supcheck);
 
             
-            $supcheck2 = "SELECT * FROM department WHERE dname = $department1 ";
+            $supcheck2 = "SELECT * FROM department WHERE dname = '$dep_name1'";
             $check2 = $conn -> query($supcheck2);
 
             if ($check->num_rows == 0){
                 echo "Supplier does not exist";
-            }else if ($check2->num_rows == 0){
+            }/*else if ($check2->num_rows == 0){
                 echo "Department does not exist";
-            }else{
-                $sql = "INSERT INTO product (name, price, sup_name, wholesale_price, department) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$department1')";
+            }*/else{
+                $sql = "INSERT INTO `product` (`name`, `price`, `sup_name`, `wholesale_price`, `department`) VALUES ('$name1', '$price1', '$sup_name1', '$wholesale_price1', '$dep_name1')";
                 $conn->query($sql);
             }
         }

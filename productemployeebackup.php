@@ -38,6 +38,7 @@
                         <a href="shift.php" class="w3-bar-item w3-button">Shift Schedule</a>
                         <a href="employee_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
                         <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
+                        <a href="transaction.php" class="w3-bar-item w3-button w3-hide-small">Transaction History</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
@@ -47,21 +48,20 @@
                         <?php
 
                         session_start();
-						$servername = "localhost";
-						$username = "root";
-						$password = "rootPass";
-						$db = "supermarket";
-
-						$conn = new mysqli($servername, $username, $password, $db);
-						// Check connection
-						if ($conn->connect_error) {
-							die("Connection failed: " . $conn->connect_error);
-						}
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "rootPass";
+                        $db = "supermarket";
+                        $conn = new mysqli($servername, $username, $password, $db);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
                         $dbLink=mysqli_connect("localhost","root","rootPass",$db);
                         ?>
 
                         <!-- F I L T E R  F O R M -->
-						
+
                         <form name ="department1" action="" method="post">
                         <table>
                         <tr>
@@ -69,7 +69,6 @@
                         <td><select id="departmentjs" onChange="change_department()">
                         <option value="selectNull">Select Department</option>
                         <option value="allProds">All Products</option>
-						
 
                         <?php
                         $res=mysqli_query($dbLink,"select * from department");
@@ -86,7 +85,6 @@
                         </td>
                         </tr>
                         </table>
-                        </form>
 
                         <script type="text/javascript">
                         function change_department(){
@@ -129,11 +127,11 @@
                 <div class="w3-container">
                     <p>To add a product, please insert the following information below:</p>
                     <form action="product_add.php" target="_self" method="post">
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" required name="dep_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" required name="name"></p>     
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" required name="price"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" required name="sup_name"></p>
                         <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" required name="wholesale_price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" required name="department"></p>
                         <p><button class="w3-button" type="submit">ADD PRODUCT</button></p>
                     </form>
                 </div>
@@ -167,12 +165,12 @@
                 <div class="w3-container">
                     <p>To update a product, please insert the following information below:</p>
                     <form action="product_update.php" target="_self" method="post">
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product ID*" required name="pid1"></p> 
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" name="name1"></p>     
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" name="price1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" name="sup_name1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" name="wholesale_price1"></p>
-                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" name="department1"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product ID*" required name="pid"></p> 
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Product Name" name="name"></p>     
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Price" name="price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Supplier Name" name="sup_name"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Wholesale Price" name="wholesale_price"></p>
+                        <p><input class="w3-input w3-padding-16 w3-border" placeholder="Department" name="department"></p>
                         <p><button class="w3-button" type="submit">UPDATE PRODUCT</button></p>
                     </form>
                 </div>
@@ -181,7 +179,7 @@
 
         <div class="w3-display-bottomleft w3-padding-large" style="color: white">
             Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
-		</div>
+        </div>
 
     </body>
 </html>

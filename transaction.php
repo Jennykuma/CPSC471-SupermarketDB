@@ -36,9 +36,9 @@
                         <a href="mainmenu_employee.php" class="w3-bar-item w3-button">Main Menu</a>
                         <a href="employee.php" class="w3-bar-item w3-button">Employee List</a>
                         <a href="shift.php" class="w3-bar-item w3-button">Shift Schedule</a>
-                        <a href="employee_product.php" class="w3-bar-item w3-button w3-light-grey">Product Information</a>
+                        <a href="employee_product.php" class="w3-bar-item w3-button w3-hide-small">Product Information</a>
                         <a href="supplier.php" class="w3-bar-item w3-button w3-hide-small">Supplier Information</a>
-                        <a href="transaction.php" class="w3-bar-item w3-button w3-hide-small">Transaction History</a>
+                        <a href="transaction.php" class="w3-bar-item w3-button w3-light-grey">Transaction History</a>
                     </div>
                 </div>
                 <div class="w3-padding-32">
