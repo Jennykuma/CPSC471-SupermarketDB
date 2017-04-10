@@ -70,7 +70,7 @@
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
-                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Transaction ID</th><th>Time</th><th>Price</th><th>Payment Method</th><th>Product</th></tr>";
+                            echo "<table style='border: 1px solid white' border='1px'><tr><th>Transaction ID</th><th>Time</th><th>Price</th><th>Payment Method</th></tr>";
                             // output data of each row
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>
@@ -78,7 +78,6 @@
                                         <td>" . $row["time"] . "</td>
                                         <td>" . $row["price"] . "</td>
                                         <td>" . $row["payment_method"] . "</td>
-                                        <td>" . $row["pid"] . "</td>
                                       </tr>";
                             }
                             echo "</table>";
