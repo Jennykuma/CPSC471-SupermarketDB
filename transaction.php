@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="w3-padding-32">
-                    <h1 class="w3-jumbo">Products</h1>
+                    <h1 class="w3-jumbo">Transaction History</h1>
                     <div class="w3-bar w3-border">
 
                         <?php
@@ -60,13 +60,11 @@
                         $dbLink=mysqli_connect("localhost","root","rootPass",$db);
                         ?>
 
-                        ADD HERE
-                        
 
                         <?php
 
                         // SQL QUERY
-                        $sql = "SELECT * FROM transaction, product";
+                        $sql = "SELECT * FROM transaction";
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
