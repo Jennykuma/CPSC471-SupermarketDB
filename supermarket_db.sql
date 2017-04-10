@@ -1,5 +1,5 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-10 03:30:49
+# Date: 2017-04-10 04:03:06
 # Generator: MySQL-Front 6.0  (Build 1.74)
 
 
@@ -106,7 +106,7 @@ CREATE TABLE `gives_feedback` (
 # Data for table "gives_feedback"
 #
 
-INSERT INTO `gives_feedback` VALUES (1,'Bakery',4,'sdfdsfdsf'),(1,'Bakery',10,'Yeeeeeast'),(1,'Management',1,'The worst'),(1,'Meat',10,'Yeast');
+INSERT INTO `gives_feedback` VALUES (1,'Bakery',4,'sdfdsfdsf'),(1,'Bakery',10,'Yeeeeeast'),(1,'Bakery',4,'Yeeeeeeeeast'),(1,'Management',1,'The worst'),(1,'Meat',10,'Yeast');
 
 #
 # Structure for table "names"
@@ -185,7 +185,7 @@ CREATE TABLE `supplier` (
 # Data for table "supplier"
 #
 
-INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718','23 9 St. NE'),('PartyDrinkSupply','4031238485','3423 Place NW');
+INSERT INTO `supplier` VALUES ('SupplyMarket','4038741569','1220 Breeze St. NW'),('Snack Stocker Inc.','7489415799','12 742 Ave. SE'),('YumYumCuppies','4031238989','7170 St. NE'),('Pea Store','4038982718','23 9 St. NE'),('PartyDrinkSupply','4031238485','3423 Place NW'),('Jel Le','4035083957','45 Jello Way NW'),('Pupper Pups','4035108197','135 Pupp Dr NW');
 
 #
 # Structure for table "product"
